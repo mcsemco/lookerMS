@@ -5,11 +5,10 @@
   elements:
   - title: Count of Transactions by Projects
     name: Count of Transactions by Projects
-    model: redshiftproject
+    model: test_2
     explore: fact_tb_dtp_req_line_1
     type: looker_column
     fields:
-    - dim_project.proj_desc
     - fact_tb_dtp_req_line_1.count_transactions
     sorts:
     - fact_tb_dtp_req_line_1.count_transactions desc

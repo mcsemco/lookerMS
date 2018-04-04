@@ -320,4 +320,9 @@ view: fact_tb_dtp_req_line_1 {
     type: count
     drill_fields: [hcp_full_name, hcp_first_name, hcp_mid_name, hcp_last_name]
   }
+  measure: count_transactions {
+    type: count_distinct
+    drill_fields: [order_source, hcp_state,project_id,hcp_full_name]
+    sql: ${TABLE}.row_id ;;
+  }
 }
