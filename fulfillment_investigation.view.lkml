@@ -241,6 +241,18 @@ view: fulfillment_investigation {
     {% endif %};;
   }
 
+  dimension: contract {
+    type: string
+    sql: ${TABLE}.contract ;;
+
+    html:
+    {% if ${client} == 'Client D' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
+  }
+
 
 #  measure: count {
 #    type: count
