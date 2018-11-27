@@ -66,6 +66,25 @@ view: fulfillment_investigation {
   dimension: cor_start_date {
     type: string
     sql: ${TABLE}.cor_start_date ;;
+
+    html:
+    {% if value == '1/4/2014' %}
+    <p style="background-color: green; ">{{ rendered_value }}</p>
+     {% elsif value == '2/5/2014' %}
+    <p style="background-color: green; ">{{ rendered_value }}</p>
+    {% elsif value == '3/5/2014' %}
+    <p style="background-color: green; ">{{ rendered_value }}</p>
+
+    {% elsif value == '4/5/2014' %}
+    <p style="background-color: lightgreen; ">{{ rendered_value }}</p>
+    {% elsif value == '5/5/2014' %}
+    <p style="background-color: lightgreen; ">{{ rendered_value }}</p>
+    {% elsif value == '6/5/2014' %}
+    <p style="background-color: lightgreen; ">{{ rendered_value }}</p>
+
+    {% else %}
+    <p style="background-color: #red; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
 
   dimension: cor_end_date {
