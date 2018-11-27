@@ -10,6 +10,8 @@ view: fulfillment_investigation {
     <p style="background-color: red; ">{{ rendered_value }}</p>
     {% elsif value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% elsif value == 'Client J' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
     {% endif %};;
