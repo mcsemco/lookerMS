@@ -20,7 +20,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.description ;;
 
     html:
-    {% if value == 'Client B' %}
+    {% if ${client} == 'Client B' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -32,7 +32,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.cor_imp ;;
 
     html:
-    {% if value == 'Client B' %}
+    {% if ${client} == 'Client B' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -44,7 +44,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.mkts_under ;;
 
     html:
-    {% if value == 'Client B' %}
+    {% if ${client} == 'Client B' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -56,7 +56,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.venues_under ;;
 
     html:
-    {% if value == 'Client B' %}
+    {% if ${client} == 'Client B' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -78,7 +78,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.priority ;;
 
     html:
-    {% if value == 'Client B' %}
+    {% if ${client} == 'Client B' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -90,7 +90,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.fulfillment_month ;;
 
     html:
-    {% if value == 'Client B' %}
+    {% if ${client} == 'Client B' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -102,7 +102,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.market1 ;;
 
     html:
-    {% if value == 'Client B' %}
+    {% if ${client} == 'Client B' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -113,7 +113,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.market2 ;;
 
     html:
-    {% if value == 'Client B' %}
+    {% if ${client} == 'Client B' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -124,7 +124,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network1 ;;
 
     html:
-    {% if value == 'Client B' %}
+    {% if ${client} == 'Client B' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -136,7 +136,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network2 ;;
 
     html:
-    {% if value == 'Client B' %}
+    {% if ${client} == 'Client B' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -148,7 +148,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network3 ;;
 
     html:
-    {% if value == 'Client B' %}
+    {% if ${client} == 'Client B' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -160,7 +160,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.fulfillment_contract ;;
 
     html:
-    {% if value == 'Client B' %}
+    {% if ${client} == 'Client B' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -172,7 +172,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network4 ;;
 
     html:
-    {% if value == 'Client B' %}
+    {% if ${client} == 'Client B' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -184,7 +184,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network5 ;;
 
     html:
-    {% if value == 'Client B' %}
+    {% if ${client} == 'Client B' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -196,7 +196,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network6 ;;
 
      html:
-    {% if value == 'Client B' %}
+    {% if ${client} == 'Client B' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
