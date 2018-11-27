@@ -69,17 +69,17 @@ view: fulfillment_investigation {
 
     html:
     {% if value == '1/4/2014' %}
-    <p style="background-color: green; ">{{ rendered_value }}</p>
+    <p style="background-color: #7FFF00; ">{{ rendered_value }}</p>
      {% elsif value == '2/5/2014' %}
-    <p style="background-color: green; ">{{ rendered_value }}</p>
-    {% elsif value == '3/5/2014' %}
-    <p style="background-color: green; ">{{ rendered_value }}</p>
+    <p style="background-color: #7FFF00; ">{{ rendered_value }}</p>
+    {% elsif value == '3/6/2014' %}
+    <p style="background-color: #7FFF00; ">{{ rendered_value }}</p>
 
-    {% elsif value == '4/5/2014' %}
+    {% elsif value == '4/7/2014' %}
     <p style="background-color: lightgreen; ">{{ rendered_value }}</p>
-    {% elsif value == '5/5/2014' %}
+    {% elsif value == '5/8/2014' %}
     <p style="background-color: lightgreen; ">{{ rendered_value }}</p>
-    {% elsif value == '6/5/2014' %}
+    {% elsif value == '6/9/2014' %}
     <p style="background-color: lightgreen; ">{{ rendered_value }}</p>
 
     {% else %}
