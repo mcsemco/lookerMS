@@ -20,7 +20,11 @@ view: fulfillment_investigation {
     sql: ${TABLE}.description ;;
 
     html:
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>;;
+    {% if value == 'Client B' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
 
   dimension: cor_imp {
@@ -28,7 +32,11 @@ view: fulfillment_investigation {
     sql: ${TABLE}.cor_imp ;;
 
     html:
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>;;
+    {% if value == 'Client B' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
 
   dimension: mkts_under {
@@ -36,7 +44,11 @@ view: fulfillment_investigation {
     sql: ${TABLE}.mkts_under ;;
 
     html:
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>;;
+    {% if value == 'Client B' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
 
   dimension: venues_under {
@@ -44,7 +56,11 @@ view: fulfillment_investigation {
     sql: ${TABLE}.venues_under ;;
 
     html:
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>;;
+    {% if value == 'Client B' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
 
   dimension: cor_start_date {
@@ -62,7 +78,11 @@ view: fulfillment_investigation {
     sql: ${TABLE}.priority ;;
 
     html:
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>;;
+    {% if value == 'Client B' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
 
   dimension: fulfillment_month {
@@ -70,7 +90,11 @@ view: fulfillment_investigation {
     sql: ${TABLE}.fulfillment_month ;;
 
     html:
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>;;
+    {% if value == 'Client B' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
 
   dimension: market1 {
@@ -78,21 +102,33 @@ view: fulfillment_investigation {
     sql: ${TABLE}.market1 ;;
 
     html:
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>;;
+    {% if value == 'Client B' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
   dimension: market2 {
     type: string
     sql: ${TABLE}.market2 ;;
 
     html:
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>;;
+    {% if value == 'Client B' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
   dimension: network1 {
     type: string
     sql: ${TABLE}.network1 ;;
 
     html:
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>;;
+    {% if value == 'Client B' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
 
   dimension: network2 {
@@ -100,7 +136,11 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network2 ;;
 
     html:
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>;;
+    {% if value == 'Client B' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
 
   dimension: network3 {
@@ -108,7 +148,11 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network3 ;;
 
     html:
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>;;
+    {% if value == 'Client B' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
 
   dimension: fulfillment_contract {
@@ -116,7 +160,11 @@ view: fulfillment_investigation {
     sql: ${TABLE}.fulfillment_contract ;;
 
     html:
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>;;
+    {% if value == 'Client B' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
 
   dimension: network4 {
@@ -124,7 +172,11 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network4 ;;
 
     html:
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>;;
+    {% if value == 'Client B' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
 
   dimension: network5 {
@@ -132,15 +184,23 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network5 ;;
 
     html:
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>;;
+    {% if value == 'Client B' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
 
   dimension: network6 {
     type: string
     sql: ${TABLE}.network6 ;;
 
-    html:
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>;;
+     html:
+    {% if value == 'Client B' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
 
 
