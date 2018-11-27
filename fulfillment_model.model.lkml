@@ -7,6 +7,7 @@ include: "*.view.lkml"                       # include all views in this project
 # # and define the joins that connect them together.
 #
  explore: fulfillment_investigation {
+  label: "Fulfillment investigation"
 #   join: orders {
 #     relationship: many_to_one
 #     sql_on: ${orders.id} = ${order_items.order_id} ;;
