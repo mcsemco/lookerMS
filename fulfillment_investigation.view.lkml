@@ -7,11 +7,11 @@ view: fulfillment_investigation {
 
     html:
     {% if value == 'Client B' %}
-    <p style="color: red; font-size: 50%">{{ rendered_value }}</p>
+    <p style="background-color: red; ">{{ rendered_value }}</p>
     {% elsif value == 'Client D' %}
-    <p style="color: yellow; font-size:80%">{{ rendered_value }}</p>
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
-    <p style="color: #FAEBD7; font-size:100%">{{ rendered_value }}</p>
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
     {% endif %};;
   }
 
