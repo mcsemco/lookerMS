@@ -50,7 +50,10 @@ view: fulfillment_investigation {
     type: string
     sql: ${TABLE}.market1 ;;
   }
-
+  dimension: market2 {
+    type: string
+    sql: ${TABLE}.market2 ;;
+  }
   dimension: network1 {
     type: string
     sql: ${TABLE}.network1 ;;
