@@ -6,9 +6,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.client ;;
 
     html:
-    {% if value = 'Client B' %}
+    {% if value == 'Client B' %}
     <p style="color: red; font-size: 50%">{{ rendered_value }}</p>
-    {% elsif value = 'Client D' %}
+    {% elsif value == 'Client D' %}
     <p style="color: yellow; font-size:80%">{{ rendered_value }}</p>
     {% else %}
     <p style="color: #FAEBD7; font-size:100%">{{ rendered_value }}</p>
