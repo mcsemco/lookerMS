@@ -90,6 +90,25 @@ view: fulfillment_investigation {
   dimension: cor_end_date {
     type: string
     sql: ${TABLE}.cor_end_date ;;
+
+    html:
+    {% if value == '4/6/2017' %}
+    <p style="background-color: #7FFF00; ">{{ rendered_value }}</p>
+    {% elsif value == '4/8/2017' %}
+    <p style="background-color: #7FFF00; ">{{ rendered_value }}</p>
+    {% elsif value == '4/10/2017' %}
+    <p style="background-color: #7FFF00; ">{{ rendered_value }}</p>
+
+    {% elsif value == '4/13/2017' %}
+    <p style="background-color: #8FBC8F; ">{{ rendered_value }}</p>
+    {% elsif value == '4/14/2017' %}
+    <p style="background-color: #8FBC8F; ">{{ rendered_value }}</p>
+    {% elsif value == '6/9/2014' %}
+    <p style="background-color: #8FBC8F; ">{{ rendered_value }}</p>
+
+    {% else %}
+    <p style="background-color: red; ">{{ rendered_value }}</p>
+    {% endif %};;
   }
 
   dimension: priority {
