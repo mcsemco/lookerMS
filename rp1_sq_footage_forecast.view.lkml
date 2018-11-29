@@ -10,25 +10,33 @@ view: rp1_sq_footage_forecast {
   measure: ahead_of_plan {
     description: "Ahead of plan"
     type: sum
+    drill_fields: [detail*]
     sql: ${TABLE}.ahead_of_plan ;;
   }
 
   measure: on_schedule {
     description: "On schedule"
     type: sum
+    drill_fields: [detail*]
     sql: ${TABLE}.on_schedule ;;
   }
 
   measure: at_risk {
     description: "At risk"
     type: sum
+    drill_fields: [detail*]
     sql: ${TABLE}.at_risk ;;
   }
 
   measure: delayed_on_hold {
     description: "Delayed/On hold"
     type: sum
+    drill_fields: [detail*]
     sql: ${TABLE}.delayed_on_hold ;;
+  }
+
+  set: detail {
+    fields: [month]
   }
 
   # # You can specify the table name if it's different from the view name:
