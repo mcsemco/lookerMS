@@ -16,10 +16,10 @@ view: rp1_sq_footage_forecast {
     description: "Ahead of plan"
     type: sum
 
-    filters: {
-      field: on_schedule_test
-      value: "yes"
-    }
+   # filters: {
+   #   field: on_schedule_test
+   #   value: "yes"
+   # }
 
     drill_fields: [detail*]
     sql: ${TABLE}.ahead_of_plan ;;
