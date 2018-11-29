@@ -7,13 +7,18 @@ view: rp1_sq_footage_forecast {
     sql: ${TABLE}.month ;;
    }
 
+  dimension: on_schedule_test {
+    type: yesno
+    sql:  ${month} = 'OCT' ;;
+  }
+
   measure: ahead_of_plan {
     description: "Ahead of plan"
     type: sum
 
     filters: {
-      field: month
-      value: "OCT"
+      field: on_schedule_test
+      value: "yes"
     }
 
     drill_fields: [detail*]
