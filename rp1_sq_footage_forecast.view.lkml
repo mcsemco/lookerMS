@@ -1,5 +1,36 @@
 view: rp1_sq_footage_forecast {
   sql_table_name: looker.sq_footage_forecast ;;
+
+   dimension: month {
+    description: "Month"
+    type: string
+    sql: ${TABLE}.month ;;
+   }
+
+  measure: ahead_of_plan {
+    description: "Ahead of plan"
+    type: sum
+    sql: ${TABLE}.ahead_of_plan ;;
+  }
+
+  measure: on_schedule {
+    description: "On schedule"
+    type: sum
+    sql: ${TABLE}.on_schedule ;;
+  }
+
+  measure: at_risk {
+    description: "At risk"
+    type: sum
+    sql: ${TABLE}.at_risk ;;
+  }
+
+  measure: delayed_on_hold {
+    description: "Delayed/On hold"
+    type: sum
+    sql: ${TABLE}.delayed_on_hold ;;
+  }
+
   # # You can specify the table name if it's different from the view name:
   # sql_table_name: my_schema_name.tester ;;
   #
