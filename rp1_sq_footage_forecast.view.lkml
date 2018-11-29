@@ -39,6 +39,13 @@ view: rp1_sq_footage_forecast {
     sql: ${TABLE}.at_risk ;;
   }
 
+  measure: at_risk2 {
+    description: "At risk"
+    type: sum
+    drill_fields: [detail*]
+    sql: ${TABLE}.at_risk ;;
+  }
+
   measure: delayed_on_hold {
     description: "Delayed/On hold"
     type: sum
