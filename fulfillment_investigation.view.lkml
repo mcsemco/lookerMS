@@ -15,6 +15,20 @@ view: fulfillment_investigation {
     {% endif %};;
   }
 
+  dimension: other_markets {
+    type: string
+    sql: ${TABLE}.other_markets ;;
+
+    html:
+    {% if value == 'Client B' %}
+    <p style="background-color: red; ">{{ rendered_value }}</p>
+    {% elsif value == 'Client D' || value == 'Client J'  %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
+  }
+
   dimension: description {
     type: string
     sql: ${TABLE}.description ;;
