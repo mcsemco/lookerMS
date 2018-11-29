@@ -20,9 +20,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.other_markets ;;
 
     html:
-    {% if value == 'Client B' %}
+    {% if client._rendered_value == 'Client B' %}
     <p style="background-color: red; ">{{ rendered_value }}</p>
-    {% elsif value == 'Client D' || value == 'Client J'  %}
+    {% elsif client._rendered_value == 'Client D' || client._rendered_value == 'Client J'  %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
