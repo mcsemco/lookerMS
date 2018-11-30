@@ -1,6 +1,10 @@
 view: fulfillment_investigation {
   sql_table_name: looker.fulfillment_data ;;
 
+
+  dimension: color_formatting {
+    type: string
+  }
   dimension: contract {
     type: string
     sql: ${TABLE}.contract ;;
