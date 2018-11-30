@@ -95,7 +95,7 @@ view: fulfillment_investigation {
   }
 
   dimension: cor_start_date {
-    type: string
+    type: date
     sql: ${TABLE}.cor_start_date ;;
 
     html:
@@ -109,7 +109,7 @@ view: fulfillment_investigation {
   }
 
   dimension: cor_end_date {
-    type: string
+    type: date
     sql: ${TABLE}.cor_end_date ;;
 
     html:
