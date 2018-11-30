@@ -8,8 +8,8 @@ view: fulfillment_investigation {
                 ,venues_under
                 ,cor_start_date
                 ,cor_end_date
-                ,NTILE(7) OVER (ORDER BY cor_start_date ASC) AS cor_start_date_part
-                ,NTILE(7) OVER (ORDER BY cor_end_date ASC) AS cor_end_date_part
+                ,NTILE(6) OVER (ORDER BY cor_start_date ASC) AS cor_start_date_part
+                ,NTILE(6) OVER (ORDER BY cor_end_date ASC) AS cor_end_date_part
                 ,priority
                 ,fulfillment_month
                 ,market1
@@ -135,19 +135,16 @@ view: fulfillment_investigation {
 
     html:
     {% if cor_start_date_part._rendered_value == '1' %}
-    <p style="background-color: green; ">{{ rendered_value }}</p>
-    {% elsif cor_start_date_part._rendered_value == '2' %}
     <p style="background-color: lightgreen; ">{{ rendered_value }}</p>
-    {% elsif cor_start_date_part._rendered_value == '3' %}
+    {% elsif cor_start_date_part._rendered_value == '2' %}
     <p style="background-color: palegreen; ">{{ rendered_value }}</p>
-    {% elsif cor_start_date_part._rendered_value == '4' %}
+    {% elsif cor_start_date_part._rendered_value == '3' %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% elsif cor_start_date_part._rendered_value == '5' %}
+    {% elsif cor_start_date_part._rendered_value == '4' %}
     <p style="background-color: pink; ">{{ rendered_value }}</p>
-    {% elsif cor_start_date_part._rendered_value == '6' %}
-    <p style="background-color: lightcoral; ">{{ rendered_value }}</p>
+    {% elsif cor_start_date_part._rendered_value == '5' %}
     {% else %}
-    <p style="background-color: red; ">{{ rendered_value }}</p>
+    <p style="background-color: lightcoral; ">{{ rendered_value }}</p>
     {% endif %} ;;
   }
 
@@ -159,17 +156,14 @@ view: fulfillment_investigation {
     {% if cor_end_date_part._rendered_value == '1' %}
     <p style="background-color: lightgreen; ">{{ rendered_value }}</p>
     {% elsif cor_end_date_part._rendered_value == '2' %}
-    <p style="background-color: pink; ">{{ rendered_value }}</p>
+    <p style="background-color: palegreen; ">{{ rendered_value }}</p>
     {% elsif cor_start_date_part._rendered_value == '3' %}
-    <p style="background-color: pink; ">{{ rendered_value }}</p>
+    <p style="background-color: white; ">{{ rendered_value }}</p>
     {% elsif cor_start_date_part._rendered_value == '4' %}
     <p style="background-color: pink; ">{{ rendered_value }}</p>
     {% elsif cor_start_date_part._rendered_value == '5' %}
-    <p style="background-color: pink; ">{{ rendered_value }}</p>
-    {% elsif cor_start_date_part._rendered_value == '6' %}
-    <p style="background-color: pink; ">{{ rendered_value }}</p>
     {% else %}
-    <p style="background-color: red; ">{{ rendered_value }}</p>
+    <p style="background-color: lightcoral; ">{{ rendered_value }}</p>
     {% endif %} ;;
   }
 
