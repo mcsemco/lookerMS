@@ -79,6 +79,7 @@ view: fulfillment_investigation {
 
   dimension: cor_imp {
     type: number
+    value_format: "0\%"
     sql: ${TABLE}.cor_imp ;;
 
     html:
@@ -183,6 +184,7 @@ view: fulfillment_investigation {
 
   dimension: fulfillment_month {
     type: number
+    value_format: "0\%"
     sql: ${TABLE}.fulfillment_month ;;
 
     html:
@@ -267,6 +269,7 @@ view: fulfillment_investigation {
 
   dimension: fulfillment_contract {
     type: number
+    value_format: "0\%"
     sql: ${TABLE}.fulfillment_contract ;;
 
     html:
