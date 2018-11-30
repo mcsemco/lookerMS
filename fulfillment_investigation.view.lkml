@@ -121,7 +121,7 @@ view: fulfillment_investigation {
 
   dimension: client_test {
     type: string
-    sql: CASE WHEN priority._rendered_value == '7' && client._rendered_value == 'Client D' THEN ${TABLE}.client END ;;
+    sql: CASE WHEN ${TABLE}.client == 'Client D' THEN ${TABLE}.client END ;;
 
     html:
     <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
