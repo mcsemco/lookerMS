@@ -4,7 +4,10 @@ view: fulfillment_investigation {
 
   dimension: color_formatting {
     type: string
+    sql:  CASE WHEN ${TABLE}.client = 'Client D' THEN 'Yellow'
+    ELSE 'Green' END ;;
   }
+
   dimension: contract {
     type: string
     sql: ${TABLE}.contract ;;
