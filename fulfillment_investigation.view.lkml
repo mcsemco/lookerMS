@@ -1,10 +1,33 @@
 view: fulfillment_investigation {
-  sql_table_name: looker.fulfillment_data ;;
+  derived_table: {
+    sql:  SELECT contract,
+                ,client
+                ,description
+                ,cor_imp
+                ,mkts_under
+                ,venues_under
+                ,cor_start_date
+                ,cor_end_date
+                ,priority
+                ,fulfillment_month
+                ,market1
+                ,network1
+                ,network2
+                ,network3
+                ,other_markets
+                ,fulfillment_contract
+                ,market2
+                ,network4
+                ,network5
+                ,network6
+          FROM looker.fulfillment_data ;;
+  }
+
 
   dimension: color_formatting {
     type: string
-    sql:  CASE WHEN LEFT(${TABLE}.mkts_under, 1) = '0' THEN 'Pink'
-               WHEN LEFT(${TABLE}.venues_under, 1) != '0' AND ${TABLE}.fulfillment_month > 100 THEN 'Yellow'
+    sql:  CASE WHEN LEFT(${TABLE}.mkts_under, 1) = '0' OR LEFT(${TABLE}.venues_under, 1) = '0' THEN 'Pink'
+               WHEN LEFT(${TABLE}.venues_under, 1) != '0' AND ${TABLE}.fulfillment_month >= 100 THEN 'Yellow'
             -- WHEN ${TABLE}.client = '' THEN 'Red'
                ELSE 'White'
           END ;;
