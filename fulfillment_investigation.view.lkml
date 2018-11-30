@@ -135,7 +135,7 @@ view: fulfillment_investigation {
 
     html:
     {% if cor_start_date_part._rendered_value == '1' %}
-    <p style="background-color: lightgreen; ">{{ rendered_value }}</p>
+    <p style="background-color: lime; ">{{ rendered_value }}</p>
     {% elsif cor_start_date_part._rendered_value == '2' %}
     <p style="background-color: palegreen; ">{{ rendered_value }}</p>
     {% elsif cor_start_date_part._rendered_value == '3' %}
@@ -154,7 +154,7 @@ view: fulfillment_investigation {
 
     html:
     {% if cor_end_date_part._rendered_value == '1' %}
-    <p style="background-color: lightgreen; ">{{ rendered_value }}</p>
+    <p style="background-color: lime; ">{{ rendered_value }}</p>
     {% elsif cor_end_date_part._rendered_value == '2' %}
     <p style="background-color: palegreen; ">{{ rendered_value }}</p>
     {% elsif cor_start_date_part._rendered_value == '3' %}
