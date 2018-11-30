@@ -121,7 +121,7 @@ view: fulfillment_investigation {
 
   dimension: client_test {
     type: string
-    sql: CASE WHEN ${TABLE}.client == 'Client D' THEN ${TABLE}.client END ;;
+    sql: CASE WHEN ${TABLE}.client == to_string('Client D') THEN ${TABLE}.client END ;;
 
     html:
     <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
