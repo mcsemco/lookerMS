@@ -21,42 +21,42 @@ view: rp1_sq_footage_forecast {
    #   value: "yes"
    # }
 
-    drill_fields: [detail*]
+    drill_fields: [detail1*]
     sql: ${TABLE}.ahead_of_plan ;;
   }
 
   measure: on_schedule {
     description: "On schedule"
     type: sum
-    drill_fields: [detail*]
+    drill_fields: [detail2*]
     sql: ${TABLE}.on_schedule ;;
   }
 
   measure: at_risk {
     description: "At risk"
     type: sum
-    drill_fields: [detail*]
+    drill_fields: [detail3*]
     sql: ${TABLE}.at_risk ;;
   }
 
   measure: at_risk2 {
     description: "At risk"
     type: sum
-    drill_fields: [detail*]
+    drill_fields: [detail3*]
     sql: ${TABLE}.at_risk ;;
   }
 
   measure: at_risk3 {
     description: "At risk"
     type: sum
-    drill_fields: [detail*]
+    drill_fields: [detail3*]
     sql: ${TABLE}.at_risk ;;
   }
 
   measure: delayed_on_hold {
     description: "Delayed/On hold"
     type: sum
-    drill_fields: [detail*]
+    drill_fields: [detail4*]
     sql: ${TABLE}.delayed_on_hold ;;
   }
 
