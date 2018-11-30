@@ -1,6 +1,8 @@
 view: fulfillment_investigation {
   sql_table_name: looker.fulfillment_data ;;
 
+
+
   dimension: client {
     type: string
     sql: ${TABLE}.client ;;
@@ -115,6 +117,14 @@ view: fulfillment_investigation {
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
     {% endif %};;
+  }
+
+  dimension: client_test {
+    type: string
+    sql: CASE WHEN ${TABLE}.priority == 7 && ${TABLE}.client == 'Client D' THEN ${TABLE}.client END ;;
+
+    html:
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
   }
 
   dimension: fulfillment_month {
@@ -246,6 +256,8 @@ view: fulfillment_investigation {
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
     {% endif %};;
   }
+
+
 
 
 #  measure: count {
