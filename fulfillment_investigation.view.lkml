@@ -107,6 +107,10 @@ view: fulfillment_investigation {
     {% endif %};;
   }
 
+  dimension: priority1 {
+    sql: ${TABLE}.priority ;;
+  }
+
   dimension: priority {
     type: string
     sql: ${TABLE}.priority ;;
