@@ -15,7 +15,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.contract ;;
 
     html:
-    {% if client._rendered_value == 'Client D' %}
+    {% if color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
