@@ -112,14 +112,8 @@ view: fulfillment_investigation {
   }
 
   dimension: priority {
+    type: string
     sql: ${TABLE}.priority ;;
-
-    html:
-    {% if client._rendered_value == 'Client D' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
-    {% endif %};;
   }
 
   dimension: fulfillment_month {
