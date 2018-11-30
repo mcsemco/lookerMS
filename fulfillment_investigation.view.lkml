@@ -18,7 +18,7 @@ view: fulfillment_investigation {
     {% if color_formatting._rendered_value == 'Pink' %}
     <p style="background-color: FAEBD7; ">{{ rendered_value }}</p>
     {% else %}
-    {% elif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #white; ">{{ rendered_value }}</p>
@@ -33,7 +33,7 @@ view: fulfillment_investigation {
     {% if color_formatting._rendered_value == 'Pink' %}
     <p style="background-color: FAEBD7; ">{{ rendered_value }}</p>
     {% else %}
-    {% elif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #white; ">{{ rendered_value }}</p>
@@ -48,7 +48,7 @@ view: fulfillment_investigation {
     {% if color_formatting._rendered_value == 'Pink' %}
     <p style="background-color: FAEBD7; ">{{ rendered_value }}</p>
     {% else %}
-    {% elif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #white; ">{{ rendered_value }}</p>
@@ -63,7 +63,7 @@ view: fulfillment_investigation {
     {% if color_formatting._rendered_value == 'Pink' %}
     <p style="background-color: FAEBD7; ">{{ rendered_value }}</p>
     {% else %}
-    {% elif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #white; ">{{ rendered_value }}</p>
