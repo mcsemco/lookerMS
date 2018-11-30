@@ -400,8 +400,9 @@ dimension: mkts_under_green {
   }
 
   measure: count {
-    type: count
-
+    type: count_distinct
+    sql: ${client} ;;
+    drill_fields: [detail4*]
   }
 
   measure: count_yellow {
@@ -428,6 +429,10 @@ set: detail1 {
 
   set: detail3 {
     fields: [client_red, description_red, cor_imp_red, mkts_under_red]
+  }
+
+  set: detail4 {
+    fields: [client, contract, description, cor_start_date, cor_end_date, client_red, description_red, cor_imp_red, mkts_under_red]
   }
 
 #  measure: count {
