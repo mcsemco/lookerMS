@@ -119,66 +119,6 @@ view: fulfillment_investigation {
     {% endif %};;
   }
 
-  dimension: client_test1 {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client A' OR
-    ${TABLE}.client = 'Client B' OR
-    ${TABLE}.client = 'Client C' OR
-    ${TABLE}.client = 'Client D' THEN ${TABLE}.client END ;;
-
-    html:
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
-  }
-
-  dimension: client_test2 {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client E' OR
-    ${TABLE}.client = 'Client F' OR
-    ${TABLE}.client = 'Client G'  THEN ${TABLE}.client END ;;
-
-    html:
-    <p style="background-color: lightgreen; ">{{ rendered_value }}</p>;;
-  }
-
-  dimension: client_test3 {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client H' OR
-    ${TABLE}.client = 'Client I' THEN ${TABLE}.client END ;;
-
-    html:
-    <p style="background-color: red; ">{{ rendered_value }}</p>;;
-  }
-
-  dimension: description_test1 {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client A' OR
-    ${TABLE}.client = 'Client B' OR
-    ${TABLE}.client = 'Client C' OR
-    ${TABLE}.client = 'Client D' THEN ${TABLE}.description END ;;
-
-    html:
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
-  }
-
-  dimension: description_test2 {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client E' OR
-    ${TABLE}.client = 'Client F' OR
-    ${TABLE}.client = 'Client G'  THEN ${TABLE}.description END ;;
-
-    html:
-    <p style="background-color: lightgreen; ">{{ rendered_value }}</p>;;
-  }
-
-  dimension: description_test3 {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client H' OR
-    ${TABLE}.client = 'Client I' THEN ${TABLE}.description END ;;
-
-    html:
-    <p style="background-color: red; ">{{ rendered_value }}</p>;;
-  }
-
   dimension: fulfillment_month {
     type: string
     sql: ${TABLE}.fulfillment_month ;;
@@ -309,6 +249,156 @@ view: fulfillment_investigation {
     {% endif %};;
   }
 
+  dimension: contract_yellow {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client A' OR
+              ${TABLE}.client = 'Client B' OR
+              ${TABLE}.client = 'Client C' OR
+              ${TABLE}.client = 'Client D' THEN ${TABLE}.contract END ;;
+
+      html:
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
+    }
+
+  dimension: contract_green {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client E' OR
+                ${TABLE}.client = 'Client F' OR
+                ${TABLE}.client = 'Client G'  THEN ${TABLE}.contract END ;;
+
+      html:
+        <p style="background-color: lightgreen; ">{{ rendered_value }}</p>;;
+      }
+
+  dimension: contract_red {
+      type: string
+      sql: CASE WHEN ${TABLE}.client = 'Client H' OR
+          ${TABLE}.client = 'Client I' THEN ${TABLE}.contract END ;;
+
+      html:
+        <p style="background-color: red; ">{{ rendered_value }}</p>;;
+      }
+
+  dimension: client_yellow {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client A' OR
+          ${TABLE}.client = 'Client B' OR
+          ${TABLE}.client = 'Client C' OR
+          ${TABLE}.client = 'Client D' THEN ${TABLE}.client END ;;
+
+      html:
+          <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
+    }
+
+  dimension: client_green {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client E' OR
+          ${TABLE}.client = 'Client F' OR
+          ${TABLE}.client = 'Client G'  THEN ${TABLE}.client END ;;
+
+      html:
+          <p style="background-color: lightgreen; ">{{ rendered_value }}</p>;;
+      }
+
+  dimension: client_red {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client H' OR
+          ${TABLE}.client = 'Client I' THEN ${TABLE}.client END ;;
+
+    html:
+        <p style="background-color: red; ">{{ rendered_value }}</p>;;
+      }
+
+  dimension: description_yellow {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client A' OR
+              ${TABLE}.client = 'Client B' OR
+              ${TABLE}.client = 'Client C' OR
+              ${TABLE}.client = 'Client D' THEN ${TABLE}.description END ;;
+
+    html:
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
+        }
+
+  dimension: description_green {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client E' OR
+                ${TABLE}.client = 'Client F' OR
+                ${TABLE}.client = 'Client G'  THEN ${TABLE}.description END ;;
+
+    html:
+        <p style="background-color: lightgreen; ">{{ rendered_value }}</p>;;
+          }
+
+  dimension: description_red {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client H' OR
+              ${TABLE}.client = 'Client I' THEN ${TABLE}.description END ;;
+
+    html:
+        <p style="background-color: red; ">{{ rendered_value }}</p>;;
+          }
+
+  dimension: cor_imp_yellow {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client A' OR
+              ${TABLE}.client = 'Client B' OR
+              ${TABLE}.client = 'Client C' OR
+              ${TABLE}.client = 'Client D' THEN ${TABLE}.cor_imp END ;;
+
+      html:
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
+    }
+
+  dimension: cor_imp_green {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client E' OR
+                ${TABLE}.client = 'Client F' OR
+                ${TABLE}.client = 'Client G'  THEN ${TABLE}.cor_imp END ;;
+
+    html:
+        <p style="background-color: lightgreen; ">{{ rendered_value }}</p>;;
+      }
+
+  dimension: cor_imp_red {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client H' OR
+          ${TABLE}.client = 'Client I' THEN ${TABLE}.cor_imp END ;;
+
+    html:
+        <p style="background-color: red; ">{{ rendered_value }}</p>;;
+      }
+
+  dimension: mkts_under_yellow {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client A' OR
+              ${TABLE}.client = 'Client B' OR
+              ${TABLE}.client = 'Client C' OR
+              ${TABLE}.client = 'Client D' THEN ${TABLE}.mkts_under END ;;
+
+      html:
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
+    }
+
+dimension: mkts_under_green {
+  type: string
+  sql: CASE WHEN ${TABLE}.client = 'Client E' OR
+                ${TABLE}.client = 'Client F' OR
+                ${TABLE}.client = 'Client G'  THEN ${TABLE}.mkts_under END ;;
+
+    html:
+        <p style="background-color: lightgreen; ">{{ rendered_value }}</p>;;
+}
+
+  dimension: mkts_under_red {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client H' OR
+          ${TABLE}.client = 'Client I' THEN ${TABLE}.mkts_under END ;;
+
+    html:
+        <p style="background-color: red; ">{{ rendered_value }}</p>;;
+  }
+
   measure: count_yellow {
     type: count
     drill_fields: [detail1*]
@@ -324,15 +414,15 @@ view: fulfillment_investigation {
     drill_fields: [detail3*]
   }
 set: detail1 {
-  fields: [client_test1, description_test1 ]
+  fields: [client_yellow, description_yellow, cor_imp_yellow, mkts_under_yellow ]
   }
 
   set: detail2 {
-    fields: [client_test2,  description_test2 ]
+    fields: [client_green,  description_green, cor_imp_green, mkts_under_green ]
   }
 
   set: detail3 {
-    fields: [client_test3, description_test3]
+    fields: [client_red, description_red, cor_imp_red, mkts_under_red]
   }
 
 #  measure: count {
