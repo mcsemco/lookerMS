@@ -25,7 +25,6 @@ view: fulfillment_investigation {
           FROM looker.fulfillment_data ;;
   }
 
-
   dimension: color_formatting {
     type: string
     sql:  CASE WHEN LEFT(${TABLE}.mkts_under, 1) = '0' OR LEFT(${TABLE}.venues_under, 1) = '0' THEN 'Pink'
@@ -41,7 +40,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -55,7 +54,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -69,7 +68,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -84,7 +83,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -98,7 +97,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -112,7 +111,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -174,7 +173,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -189,7 +188,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -203,7 +202,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -217,7 +216,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -231,7 +230,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -245,7 +244,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -259,7 +258,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -274,7 +273,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -288,7 +287,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -302,7 +301,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -316,7 +315,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
@@ -330,7 +329,7 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
