@@ -5,7 +5,7 @@ view: fulfillment_investigation {
   dimension: color_formatting {
     type: string
     sql:  CASE WHEN LEFT(${TABLE}.mkts_under, 1) = '0' THEN 'Pink'
-               WHEN LEFT(${TABLE}.venues_under, 1) != '0' THEN 'Yellow' -- AND ${TABLE}.fulfillment_month > 100
+               WHEN LEFT(${TABLE}.venues_under, 1) != '0' AND ${TABLE}.fulfillment_month > 100 THEN 'Yellow'
             -- WHEN ${TABLE}.client = ' ' THEN 'Red'
     ELSE 'White' END ;;
   }
@@ -15,7 +15,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.contract ;;
 
     html:
-    {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if client._rendered_value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -27,7 +27,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.client ;;
 
     html:
-    {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if value == 'Client B' %}
+    <p style="background-color: red; ">{{ rendered_value }}</p>
+    {% elsif value == 'Client D' || value == 'Client J'  %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -39,7 +41,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.other_markets ;;
 
     html:
-    {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if client._rendered_value == 'Client B' %}
+    <p style="background-color: red; ">{{ rendered_value }}</p>
+    {% elsif client._rendered_value == 'Client D' || client._rendered_value == 'Client J'  %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -51,7 +55,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.description ;;
 
     html:
-    {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if client._rendered_value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -63,7 +67,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.cor_imp ;;
 
     html:
-    {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if client._rendered_value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -75,7 +79,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.mkts_under ;;
 
     html:
-    {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if client._rendered_value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -87,7 +91,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.venues_under ;;
 
     html:
-    {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if client._rendered_value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -142,7 +146,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.fulfillment_month ;;
 
     html:
-    {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if client._rendered_value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -154,7 +158,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.market1 ;;
 
     html:
-   {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if client._rendered_value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -165,7 +169,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.market2 ;;
 
     html:
-    {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if client._rendered_value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -176,7 +180,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network1 ;;
 
     html:
-    {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if client._rendered_value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -188,7 +192,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network2 ;;
 
     html:
-    {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if client._rendered_value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -200,7 +204,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network3 ;;
 
     html:
-    {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if client._rendered_value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -212,7 +216,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.fulfillment_contract ;;
 
     html:
-    {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if client._rendered_value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -224,7 +228,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network4 ;;
 
     html:
-    {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if client._rendered_value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -236,7 +240,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network5 ;;
 
     html:
-    {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if client._rendered_value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -248,7 +252,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network6 ;;
 
     html:
-    {% if LEFT(mkts_under._rendered_value, 1) == '0' %}
+    {% if client._rendered_value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
