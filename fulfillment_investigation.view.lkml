@@ -15,10 +15,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.contract ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Yellow' %}
+    {% if color_formatting._rendered_value == 'Pink' %}
+    <p style="background-color: FAEBD7; ">{{ rendered_value }}</p>
+    {% else %}
+    {% elif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: #white; ">{{ rendered_value }}</p>
     {% endif %};;
   }
 
@@ -27,12 +30,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.client ;;
 
     html:
-    {% if value == 'Client B' %}
-    <p style="background-color: red; ">{{ rendered_value }}</p>
-    {% elsif value == 'Client D' || value == 'Client J'  %}
+    {% if color_formatting._rendered_value == 'Pink' %}
+    <p style="background-color: FAEBD7; ">{{ rendered_value }}</p>
+    {% else %}
+    {% elif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: #white; ">{{ rendered_value }}</p>
     {% endif %};;
   }
 
@@ -41,12 +45,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.other_markets ;;
 
     html:
-    {% if client._rendered_value == 'Client B' %}
-    <p style="background-color: red; ">{{ rendered_value }}</p>
-    {% elsif client._rendered_value == 'Client D' || client._rendered_value == 'Client J'  %}
+    {% if color_formatting._rendered_value == 'Pink' %}
+    <p style="background-color: FAEBD7; ">{{ rendered_value }}</p>
+    {% else %}
+    {% elif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: #white; ">{{ rendered_value }}</p>
     {% endif %};;
   }
 
@@ -55,10 +60,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.description ;;
 
     html:
-    {% if client._rendered_value == 'Client D' %}
+    {% if color_formatting._rendered_value == 'Pink' %}
+    <p style="background-color: FAEBD7; ">{{ rendered_value }}</p>
+    {% else %}
+    {% elif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: #white; ">{{ rendered_value }}</p>
     {% endif %};;
   }
 
