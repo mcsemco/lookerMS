@@ -137,7 +137,7 @@ view: fulfillment_investigation {
     ${TABLE}.client = 'Client G'  THEN ${TABLE}.client END ;;
 
     html:
-    <p style="background-color: green; ">{{ rendered_value }}</p>;;
+    <p style="background-color: lightgreen; ">{{ rendered_value }}</p>;;
   }
 
   dimension: client_test3 {
@@ -167,7 +167,7 @@ view: fulfillment_investigation {
     ${TABLE}.client = 'Client G'  THEN ${TABLE}.description END ;;
 
     html:
-    <p style="background-color: green; ">{{ rendered_value }}</p>;;
+    <p style="background-color: lightgreen; ">{{ rendered_value }}</p>;;
   }
 
   dimension: description_test3 {
