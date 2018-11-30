@@ -400,8 +400,7 @@ dimension: mkts_under_green {
   }
 
   measure: count {
-    type: count_distinct
-    sql: ${client} ;;
+    type: count
     drill_fields: [detail4*]
   }
 
