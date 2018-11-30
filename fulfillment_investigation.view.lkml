@@ -399,6 +399,11 @@ dimension: mkts_under_green {
         <p style="background-color: red; ">{{ rendered_value }}</p>;;
   }
 
+  measure: count {
+    type: count
+
+  }
+
   measure: count_yellow {
     type: count
     drill_fields: [detail1*]
