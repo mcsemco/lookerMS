@@ -5,7 +5,7 @@ view: fulfillment_investigation {
   dimension: color_formatting {
     type: string
     sql:  CASE WHEN LEFT(${TABLE}.mkts_under, 1) = '0' THEN 'Pink'
-               WHEN LEFT(${TABLE}.venues_under, 1) != '0' AND ${TABLE}.fulfillment_month > 100 THEN 'Yellow'
+               WHEN LEFT(${TABLE}.venues_under, 1) != '0' THEN 'Yellow' -- AND ${TABLE}.fulfillment_month > 100
             -- WHEN ${TABLE}.client = ' ' THEN 'Red'
     ELSE 'White' END ;;
   }
@@ -142,7 +142,7 @@ view: fulfillment_investigation {
   }
 
   dimension: fulfillment_month {
-    type: number
+    type: string
     sql: ${TABLE}.fulfillment_month ;;
 
     html:
