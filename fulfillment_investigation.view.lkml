@@ -133,7 +133,7 @@ view: fulfillment_investigation {
   dimension: client_test2 {
     type: string
     sql: CASE WHEN ${TABLE}.client = 'Client E'
-    ${TABLE}.client = 'Client F'
+    ${TABLE}.client = 'Client F' OR
     ${TABLE}.client = 'Client G'  THEN ${TABLE}.client END ;;
 
     html:
@@ -163,7 +163,7 @@ view: fulfillment_investigation {
   dimension: description_test2 {
     type: string
     sql: CASE WHEN ${TABLE}.client = 'Client E'
-    ${TABLE}.client = 'Client F'
+    ${TABLE}.client = 'Client F' OR
     ${TABLE}.client = 'Client G'  THEN ${TABLE}.description END ;;
 
     html:
