@@ -8,6 +8,8 @@ view: fulfillment_investigation {
                 ,venues_under
                 ,cor_start_date
                 ,cor_end_date
+                ,NTILE(3) OVER (ORDER BY cor_start_date ASC) AS cor_start_date_part
+                ,NTILE(3) OVER (ORDER BY cor_end_date ASC) AS cor_end_date_part
                 ,priority
                 ,fulfillment_month
                 ,market1
@@ -117,17 +119,27 @@ view: fulfillment_investigation {
     {% endif %} ;;
   }
 
+  dimension: cor_start_date_part {
+    type: date
+    sql: ${TABLE}.cor_start_date_part ;;
+  }
+
+  dimension: cor_end_date_part {
+    type: date
+    sql: ${TABLE}.cor_end_date_part ;;
+  }
+
   dimension: cor_start_date {
     type: date
     sql: ${TABLE}.cor_start_date ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
+    {% if cor_start_date_part._rendered_value == '1' %}
+    <p style="background-color: lightgreen; ">{{ rendered_value }}</p>
+    {% elsif cor_start_date_part._rendered_value == '2' %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: lightred; ">{{ rendered_value }}</p>
     {% endif %} ;;
   }
 
@@ -136,12 +148,12 @@ view: fulfillment_investigation {
     sql: ${TABLE}.cor_end_date ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
+    {% if cor_end_date._rendered_value == '1' %}
+    <p style="background-color: lightgreen; ">{{ rendered_value }}</p>
+    {% elsif cor_end_date._rendered_value == '2' %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: lightred; ">{{ rendered_value }}</p>
     {% endif %} ;;
   }
 
