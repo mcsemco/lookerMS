@@ -256,7 +256,8 @@ view: fulfillment_investigation {
   }
 
   set: detail {
-    fields: [client, contract, description, cor_start_date, cor_end_date]
+    fields: [ contract, client, description, cor_imp, mkts_under, venues_under, cor_start_date, cor_end_date, priority, fulfillment_month, market1,network1, network2, network3,
+      fulfillment_contract,network4,network5,network6 ]
   }
 
 #  measure: count {
