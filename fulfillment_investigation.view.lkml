@@ -27,10 +27,10 @@ view: fulfillment_investigation {
 
   dimension: color_formatting {
     type: string
-    sql:  CASE WHEN LEFT(${TABLE}.mkts_under, 1) = '0' OR LEFT(${TABLE}.venues_under, 1) = '0' THEN 'Pink'
-               WHEN LEFT(${TABLE}.venues_under, 1) != '0' AND ${TABLE}.fulfillment_month >= 100 THEN 'Yellow'
+    sql:  CASE WHEN LEFT(${TABLE}.mkts_under, 1) = '0' OR LEFT(${TABLE}.venues_under, 1) = '0' THEN 'PINK'
+               WHEN LEFT(${TABLE}.venues_under, 1) != '0' AND ${TABLE}.fulfillment_month >= 100 THEN 'YELLOW'
             -- WHEN ${TABLE}.client = '' THEN 'Red'
-               ELSE 'White'
+               ELSE 'WHITE'
           END ;;
   }
 
@@ -39,9 +39,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.contract ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -53,9 +53,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.client ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -67,9 +67,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.description ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -82,9 +82,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.cor_imp ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -96,9 +96,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.mkts_under ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -110,9 +110,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.venues_under ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -170,9 +170,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.priority ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -185,9 +185,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.fulfillment_month ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -199,9 +199,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.market1 ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -213,9 +213,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network1 ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -227,9 +227,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network2 ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -241,9 +241,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network3 ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -255,9 +255,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.other_markets ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -270,9 +270,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.fulfillment_contract ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -284,9 +284,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.market2 ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -298,9 +298,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network4 ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -312,9 +312,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network5 ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
@@ -326,9 +326,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network6 ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
+    {% if color_formatting._rendered_value == 'PINK' %}
     <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% elsif color_formatting._rendered_value == 'YELLOW' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
