@@ -5,7 +5,7 @@ view: fulfillment_investigation {
   dimension: color_formatting {
     type: string
     sql:  CASE WHEN LEFT(${TABLE}.mkts_under, 1) = '0' THEN 'Pink'
-    WHEN ${TABLE}.client = 'Client D' OR ${TABLE}.client = 'Client E' THEN 'Yellow'
+    WHEN LEFT(${TABLE}.venues_under, 1) != '0' THEN 'Pink' -- AND ${TABLE}.fulfillment_month > 100 AND difference between COR END Date and COR Start date <= 7
     WHEN ${TABLE}.client = 'Client F' THEN 'Red'
     ELSE 'White' END ;;
   }
