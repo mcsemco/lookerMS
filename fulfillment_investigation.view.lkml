@@ -137,7 +137,7 @@ view: fulfillment_investigation {
   }
 
   dimension: fulfillment_month {
-    type: string
+    type: number
     sql: ${TABLE}.fulfillment_month ;;
 
     html:
