@@ -1,6 +1,6 @@
 view: fulfillment_investigation {
   derived_table: {
-    sql:  SELECT contract,
+    sql:  SELECT contract
                 ,client
                 ,description
                 ,cor_imp
