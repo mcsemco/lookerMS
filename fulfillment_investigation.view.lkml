@@ -1,7 +1,17 @@
 view: fulfillment_investigation {
   sql_table_name: looker.fulfillment_data ;;
 
+  dimension: contract {
+    type: string
+    sql: ${TABLE}.contract ;;
 
+    html:
+    {% if client._rendered_value == 'Client D' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% endif %};;
+  }
 
   dimension: client {
     type: string
@@ -240,201 +250,13 @@ view: fulfillment_investigation {
     {% endif %};;
   }
 
-  dimension: contract {
-    type: string
-    sql: ${TABLE}.contract ;;
-
-    html:
-    {% if client._rendered_value == 'Client D' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
-    {% endif %};;
-  }
-
-  dimension: contract_yellow {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client A' OR
-              ${TABLE}.client = 'Client B' OR
-              ${TABLE}.client = 'Client C' OR
-              ${TABLE}.client = 'Client D' THEN ${TABLE}.contract END ;;
-
-      html:
-        <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
-    }
-
-  dimension: contract_green {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client E' OR
-                ${TABLE}.client = 'Client F' OR
-                ${TABLE}.client = 'Client G'  THEN ${TABLE}.contract END ;;
-
-      html:
-        <p style="background-color: lightgreen; ">{{ rendered_value }}</p>;;
-      }
-
-  dimension: contract_red {
-      type: string
-      sql: CASE WHEN ${TABLE}.client = 'Client H' OR
-          ${TABLE}.client = 'Client I' THEN ${TABLE}.contract END ;;
-
-      html:
-        <p style="background-color: red; ">{{ rendered_value }}</p>;;
-      }
-
-  dimension: client_yellow {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client A' OR
-          ${TABLE}.client = 'Client B' OR
-          ${TABLE}.client = 'Client C' OR
-          ${TABLE}.client = 'Client D' THEN ${TABLE}.client END ;;
-
-      html:
-          <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
-    }
-
-  dimension: client_green {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client E' OR
-          ${TABLE}.client = 'Client F' OR
-          ${TABLE}.client = 'Client G'  THEN ${TABLE}.client END ;;
-
-      html:
-          <p style="background-color: lightgreen; ">{{ rendered_value }}</p>;;
-      }
-
-  dimension: client_red {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client H' OR
-          ${TABLE}.client = 'Client I' THEN ${TABLE}.client END ;;
-
-    html:
-        <p style="background-color: red; ">{{ rendered_value }}</p>;;
-      }
-
-  dimension: description_yellow {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client A' OR
-              ${TABLE}.client = 'Client B' OR
-              ${TABLE}.client = 'Client C' OR
-              ${TABLE}.client = 'Client D' THEN ${TABLE}.description END ;;
-
-    html:
-        <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
-        }
-
-  dimension: description_green {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client E' OR
-                ${TABLE}.client = 'Client F' OR
-                ${TABLE}.client = 'Client G'  THEN ${TABLE}.description END ;;
-
-    html:
-        <p style="background-color: lightgreen; ">{{ rendered_value }}</p>;;
-          }
-
-  dimension: description_red {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client H' OR
-              ${TABLE}.client = 'Client I' THEN ${TABLE}.description END ;;
-
-    html:
-        <p style="background-color: red; ">{{ rendered_value }}</p>;;
-          }
-
-  dimension: cor_imp_yellow {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client A' OR
-              ${TABLE}.client = 'Client B' OR
-              ${TABLE}.client = 'Client C' OR
-              ${TABLE}.client = 'Client D' THEN ${TABLE}.cor_imp END ;;
-
-      html:
-        <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
-    }
-
-  dimension: cor_imp_green {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client E' OR
-                ${TABLE}.client = 'Client F' OR
-                ${TABLE}.client = 'Client G'  THEN ${TABLE}.cor_imp END ;;
-
-    html:
-        <p style="background-color: lightgreen; ">{{ rendered_value }}</p>;;
-      }
-
-  dimension: cor_imp_red {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client H' OR
-          ${TABLE}.client = 'Client I' THEN ${TABLE}.cor_imp END ;;
-
-    html:
-        <p style="background-color: red; ">{{ rendered_value }}</p>;;
-      }
-
-  dimension: mkts_under_yellow {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client A' OR
-              ${TABLE}.client = 'Client B' OR
-              ${TABLE}.client = 'Client C' OR
-              ${TABLE}.client = 'Client D' THEN ${TABLE}.mkts_under END ;;
-
-      html:
-        <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
-    }
-
-dimension: mkts_under_green {
-  type: string
-  sql: CASE WHEN ${TABLE}.client = 'Client E' OR
-                ${TABLE}.client = 'Client F' OR
-                ${TABLE}.client = 'Client G'  THEN ${TABLE}.mkts_under END ;;
-
-    html:
-        <p style="background-color: lightgreen; ">{{ rendered_value }}</p>;;
-}
-
-  dimension: mkts_under_red {
-    type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client H' OR
-          ${TABLE}.client = 'Client I' THEN ${TABLE}.mkts_under END ;;
-
-    html:
-        <p style="background-color: red; ">{{ rendered_value }}</p>;;
-  }
-
   measure: count {
     type: count
-    drill_fields: [detail4*]
+    drill_fields: [detail*]
   }
 
-  measure: count_yellow {
-    type: count
-    drill_fields: [detail1*]
-  }
-
-  measure: count_green {
-    type: count
-    drill_fields: [detail2*]
-  }
-
-  measure: count_red {
-    type: count
-    drill_fields: [detail3*]
-  }
-set: detail1 {
-  fields: [client_yellow, description_yellow, cor_imp_yellow, mkts_under_yellow ]
-  }
-
-  set: detail2 {
-    fields: [client_green,  description_green, cor_imp_green, mkts_under_green ]
-  }
-
-  set: detail3 {
-    fields: [client_red, description_red, cor_imp_red, mkts_under_red]
-  }
-
-  set: detail4 {
-    fields: [client, contract, description, cor_start_date, cor_end_date, client_red, description_red, cor_imp_red, mkts_under_red]
+  set: detail {
+    fields: [client, contract, description, cor_start_date, cor_end_date]
   }
 
 #  measure: count {
