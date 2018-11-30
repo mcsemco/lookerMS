@@ -119,12 +119,28 @@ view: fulfillment_investigation {
     {% endif %};;
   }
 
-  dimension: client_test {
+  dimension: client_test1 {
     type: string
     sql: CASE WHEN ${TABLE}.client = 'Client D' THEN ${TABLE}.client END ;;
 
     html:
     <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
+  }
+
+  dimension: client_test2 {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client E' THEN ${TABLE}.client END ;;
+
+    html:
+    <p style="background-color: red; ">{{ rendered_value }}</p>;;
+  }
+
+  dimension: client_test3 {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client F' THEN ${TABLE}.client END ;;
+
+    html:
+    <p style="background-color: green; ">{{ rendered_value }}</p>;;
   }
 
   dimension: fulfillment_month {
@@ -257,8 +273,31 @@ view: fulfillment_investigation {
     {% endif %};;
   }
 
+  measure: count_yellow {
+    type: count
+    drill_fields: [detail1*]
+  }
 
+  measure: count_green {
+    type: count
+    drill_fields: [detail2*]
+  }
 
+  measure: count_red {
+    type: count
+    drill_fields: [detail3*]
+  }
+set: detail1 {
+  fields: [client_test1, description]
+  }
+
+  set: detail2 {
+    fields: [client_test2,  description]
+  }
+
+  set: detail3 {
+    fields: [client_test3, description]
+  }
 
 #  measure: count {
 #    type: count
