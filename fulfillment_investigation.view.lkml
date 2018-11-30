@@ -5,7 +5,7 @@ view: fulfillment_investigation {
   dimension: color_formatting {
     type: string
     sql:  CASE WHEN ${TABLE}.client = 'Client A' OR ${TABLE}.client = 'Client B' OR ${TABLE}.client = 'Client C' THEN 'Green'
-    CASE WHEN ${TABLE}.client = 'Client D' OR OR ${TABLE}.client = 'Client E' OR ${TABLE}.client = 'Client F' THEN 'Yellow'
+    WHEN ${TABLE}.client = 'Client D' OR ${TABLE}.client = 'Client E' OR ${TABLE}.client = 'Client F' THEN 'Yellow'
     ELSE 'Red' END ;;
   }
 
