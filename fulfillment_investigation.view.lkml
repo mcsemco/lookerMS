@@ -112,7 +112,6 @@ view: fulfillment_investigation {
   }
 
   dimension: priority {
-    type: string
     sql: ${TABLE}.priority ;;
 
     html:
