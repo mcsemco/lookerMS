@@ -143,6 +143,30 @@ view: fulfillment_investigation {
     <p style="background-color: green; ">{{ rendered_value }}</p>;;
   }
 
+  dimension: description_test1 {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client D' THEN ${TABLE}.description END ;;
+
+    html:
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
+  }
+
+  dimension: description_test2 {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client E' THEN ${TABLE}.description END ;;
+
+    html:
+    <p style="background-color: red; ">{{ rendered_value }}</p>;;
+  }
+
+  dimension: description_test3 {
+    type: string
+    sql: CASE WHEN ${TABLE}.client = 'Client F' THEN ${TABLE}.description END ;;
+
+    html:
+    <p style="background-color: green; ">{{ rendered_value }}</p>;;
+  }
+
   dimension: fulfillment_month {
     type: string
     sql: ${TABLE}.fulfillment_month ;;
@@ -288,15 +312,15 @@ view: fulfillment_investigation {
     drill_fields: [detail3*]
   }
 set: detail1 {
-  fields: [client_test1, description]
+  fields: [client_test1, description_test1 ]
   }
 
   set: detail2 {
-    fields: [client_test2,  description]
+    fields: [client_test2,  description_test2 ]
   }
 
   set: detail3 {
-    fields: [client_test3, description]
+    fields: [client_test3, description_test3]
   }
 
 #  measure: count {
