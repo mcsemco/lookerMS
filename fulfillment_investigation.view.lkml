@@ -39,13 +39,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.contract ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   dimension: client {
@@ -53,13 +53,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.client ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   dimension: description {
@@ -67,13 +67,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.description ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   dimension: cor_imp {
@@ -82,13 +82,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.cor_imp ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   dimension: mkts_under {
@@ -96,12 +96,12 @@ view: fulfillment_investigation {
     sql: ${TABLE}.mkts_under ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
     {% endif %} ;;
   }
 
@@ -110,13 +110,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.venues_under ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   dimension: cor_start_date_part {
@@ -134,17 +134,17 @@ view: fulfillment_investigation {
     sql: ${TABLE}.cor_start_date ;;
 
     html:
-    {% if cor_start_date_part._rendered_value == '1' %}
-    <p style="background-color: lime; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
-    {% elsif cor_start_date_part._rendered_value == '2' %}
-    <p style="background-color: palegreen; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
-    {% elsif cor_start_date_part._rendered_value == '3' %}
-    <p style="background-color: white; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
-    {% elsif cor_start_date_part._rendered_value == '4' %}
-    <p style="background-color: pink; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
-    {% else %}
-    <p style="background-color: lightcoral; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
-    {% endif %} ;;
+      {% if cor_start_date_part._rendered_value == '1' %}
+        <p style="background-color: lime; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
+      {% elsif cor_start_date_part._rendered_value == '2' %}
+        <p style="background-color: palegreen; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
+      {% elsif cor_start_date_part._rendered_value == '3' %}
+        <p style="background-color: white; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
+      {% elsif cor_start_date_part._rendered_value == '4' %}
+        <p style="background-color: pink; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
+      {% else %}
+        <p style="background-color: lightcoral; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
+      {% endif %} ;;
   }
 
   dimension: cor_end_date {
@@ -152,17 +152,17 @@ view: fulfillment_investigation {
     sql: ${TABLE}.cor_end_date ;;
 
     html:
-    {% if cor_end_date_part._rendered_value == '1' %}
-    <p style="background-color: lime; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
-    {% elsif cor_end_date_part._rendered_value == '2' %}
-    <p style="background-color: palegreen; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
-    {% elsif cor_start_date_part._rendered_value == '3' %}
-    <p style="background-color: white; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
-    {% elsif cor_start_date_part._rendered_value == '4' %}
-    <p style="background-color: pink; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
-    {% else %}
-    <p style="background-color: lightcoral; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
-    {% endif %} ;;
+      {% if cor_end_date_part._rendered_value == '1' %}
+        <p style="background-color: lime; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
+      {% elsif cor_end_date_part._rendered_value == '2' %}
+        <p style="background-color: palegreen; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
+      {% elsif cor_start_date_part._rendered_value == '3' %}
+        <p style="background-color: white; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
+      {% elsif cor_start_date_part._rendered_value == '4' %}
+        <p style="background-color: pink; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
+      {% else %}
+        <p style="background-color: lightcoral; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
+      {% endif %} ;;
   }
 
   dimension: priority {
@@ -170,13 +170,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.priority ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   dimension: fulfillment_month {
@@ -185,13 +185,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.fulfillment_month ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   dimension: market1 {
@@ -199,13 +199,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.market1 ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   dimension: network1 {
@@ -213,13 +213,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network1 ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   dimension: network2 {
@@ -227,13 +227,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network2 ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   dimension: network3 {
@@ -241,13 +241,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network3 ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   dimension: other_markets {
@@ -255,13 +255,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.other_markets ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   dimension: fulfillment_contract {
@@ -270,13 +270,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.fulfillment_contract ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   dimension: market2 {
@@ -284,13 +284,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.market2 ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   dimension: network4 {
@@ -298,13 +298,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network4 ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   dimension: network5 {
@@ -312,13 +312,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network5 ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   dimension: network6 {
@@ -326,13 +326,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network6 ;;
 
     html:
-    {% if color_formatting._rendered_value == 'PINK' %}
-    <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'YELLOW' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %} ;;
+      {% if color_formatting._rendered_value == 'PINK' %}
+        <p style="background-color: antiquewhite; ">{{ rendered_value }}</p>
+      {% elsif color_formatting._rendered_value == 'YELLOW' %}
+        <p style="background-color: yellow; ">{{ rendered_value }}</p>
+      {% else %}
+        <p style="background-color: white; ">{{ rendered_value }}</p>
+      {% endif %} ;;
   }
 
   measure: count {
