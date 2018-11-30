@@ -148,9 +148,9 @@ view: fulfillment_investigation {
     sql: ${TABLE}.cor_end_date ;;
 
     html:
-    {% if cor_end_date._rendered_value == '1' %}
+    {% if cor_end_date_part._rendered_value == '1' %}
     <p style="background-color: lightgreen; ">{{ rendered_value }}</p>
-    {% elsif cor_end_date._rendered_value == '2' %}
+    {% elsif cor_end_date_part._rendered_value == '2' %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: lightred; ">{{ rendered_value }}</p>
