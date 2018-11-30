@@ -121,7 +121,7 @@ view: fulfillment_investigation {
 
   dimension: client_test1 {
     type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client D' THEN ${TABLE}.client END ;;
+    sql: CASE WHEN ${TABLE}.client = 'Client A' || ${TABLE}.client = 'Client D' THEN ${TABLE}.client END ;;
 
     html:
     <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
@@ -132,7 +132,7 @@ view: fulfillment_investigation {
     sql: CASE WHEN ${TABLE}.client = 'Client E' THEN ${TABLE}.client END ;;
 
     html:
-    <p style="background-color: red; ">{{ rendered_value }}</p>;;
+    <p style="background-color: green; ">{{ rendered_value }}</p>;;
   }
 
   dimension: client_test3 {
@@ -140,7 +140,7 @@ view: fulfillment_investigation {
     sql: CASE WHEN ${TABLE}.client = 'Client F' THEN ${TABLE}.client END ;;
 
     html:
-    <p style="background-color: green; ">{{ rendered_value }}</p>;;
+    <p style="background-color: red; ">{{ rendered_value }}</p>;;
   }
 
   dimension: description_test1 {
@@ -156,7 +156,7 @@ view: fulfillment_investigation {
     sql: CASE WHEN ${TABLE}.client = 'Client E' THEN ${TABLE}.description END ;;
 
     html:
-    <p style="background-color: red; ">{{ rendered_value }}</p>;;
+    <p style="background-color: green; ">{{ rendered_value }}</p>;;
   }
 
   dimension: description_test3 {
@@ -164,7 +164,7 @@ view: fulfillment_investigation {
     sql: CASE WHEN ${TABLE}.client = 'Client F' THEN ${TABLE}.description END ;;
 
     html:
-    <p style="background-color: green; ">{{ rendered_value }}</p>;;
+    <p style="background-color: red; ">{{ rendered_value }}</p>;;
   }
 
   dimension: fulfillment_month {
