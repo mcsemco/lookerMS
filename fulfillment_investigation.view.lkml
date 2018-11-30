@@ -221,7 +221,7 @@ view: fulfillment_investigation {
   }
 
   dimension: fulfillment_contract {
-    type: string
+    type: number
     sql: ${TABLE}.fulfillment_contract ;;
 
     html:
