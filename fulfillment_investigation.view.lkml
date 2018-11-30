@@ -123,7 +123,7 @@ view: fulfillment_investigation {
   }
 
   dimension: priority {
-    type: string
+    type: number
     sql: ${TABLE}.priority ;;
 
     html:
