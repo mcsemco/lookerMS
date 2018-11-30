@@ -1,13 +1,13 @@
 view: fulfillment_investigation {
   sql_table_name: looker.fulfillment_data ;;
 
-
   dimension: color_formatting {
     type: string
     sql:  CASE WHEN LEFT(${TABLE}.mkts_under, 1) = '0' THEN 'Pink'
                WHEN LEFT(${TABLE}.venues_under, 1) != '0' THEN 'Yellow' -- AND ${TABLE}.fulfillment_month > 100
             -- WHEN ${TABLE}.client = ' ' THEN 'Red'
-          ELSE 'White' END ;;
+               ELSE 'White'
+          END ;;
   }
 
   dimension: contract {
@@ -21,7 +21,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: client {
@@ -35,7 +35,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: description {
@@ -49,11 +49,11 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: cor_imp {
-    type: string
+    type: number
     sql: ${TABLE}.cor_imp ;;
 
     html:
@@ -63,7 +63,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: mkts_under {
@@ -77,7 +77,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: venues_under {
@@ -91,7 +91,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: cor_start_date {
@@ -105,7 +105,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: cor_end_date {
@@ -119,7 +119,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: priority {
@@ -133,7 +133,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: fulfillment_month {
@@ -147,7 +147,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: market1 {
@@ -161,7 +161,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: network1 {
@@ -175,7 +175,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: network2 {
@@ -189,7 +189,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: network3 {
@@ -203,7 +203,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: other_markets {
@@ -217,7 +217,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: fulfillment_contract {
@@ -231,7 +231,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: market2 {
@@ -245,7 +245,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: network4 {
@@ -259,7 +259,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: network5 {
@@ -273,7 +273,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   dimension: network6 {
@@ -287,7 +287,7 @@ view: fulfillment_investigation {
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
+    {% endif %} ;;
   }
 
   measure: count {
@@ -296,12 +296,7 @@ view: fulfillment_investigation {
   }
 
   set: detail {
-    fields: [ contract, client, description, cor_imp, mkts_under, venues_under, cor_start_date, cor_end_date, priority, fulfillment_month, market1,network1, network2, network3,
+    fields: [contract, client, description, cor_imp, mkts_under, venues_under, cor_start_date, cor_end_date, priority, fulfillment_month, market1,network1, network2, network3,
       other_markets, fulfillment_contract,network4,network5,network6 ]
   }
-
-#  measure: count {
-#    type: count
-#    drill_fields: [client_name]
-#  }
 }
