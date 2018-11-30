@@ -5,7 +5,7 @@ view: fulfillment_investigation {
   dimension: color_formatting {
     type: string
     sql:  CASE WHEN LEFT(${TABLE}.mkts_under, 1) = '0' THEN 'Pink'
-    WHEN LEFT(${TABLE}.venues_under, 1) != '0' THEN 'Yellow' -- AND ${TABLE}.fulfillment_month > 100 AND difference between COR END Date and COR Start date <= 7
+    WHEN LEFT(${TABLE}.venues_under, 1) != '0' THEN 'Yellow' -- AND ${TABLE}.fulfillment_month > 100
    -- WHEN ${TABLE}.client = ' ' THEN 'Red'
     ELSE 'White' END ;;
   }
@@ -15,7 +15,7 @@ view: fulfillment_investigation {
     sql: ${TABLE}.contract ;;
 
     html:
-    {% if client._rendered_value == 'Client D' %}
+    {% if LEFT(client._rendered_value, 1) == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
@@ -142,7 +142,7 @@ view: fulfillment_investigation {
   }
 
   dimension: fulfillment_month {
-    type: string
+    type: number
     sql: ${TABLE}.fulfillment_month ;;
 
     html:
