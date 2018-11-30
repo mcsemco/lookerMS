@@ -16,12 +16,11 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: FAEBD7; ">{{ rendered_value }}</p>
-    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
-    <p style="background-color: #white; ">{{ rendered_value }}</p>
+    <p style="background-color: white; ">{{ rendered_value }}</p>
     {% endif %};;
   }
 
@@ -31,12 +30,11 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: FAEBD7; ">{{ rendered_value }}</p>
-    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
-    <p style="background-color: #white; ">{{ rendered_value }}</p>
+    <p style="background-color: white; ">{{ rendered_value }}</p>
     {% endif %};;
   }
 
@@ -46,12 +44,11 @@ view: fulfillment_investigation {
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: FAEBD7; ">{{ rendered_value }}</p>
-    {% else %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
     {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
-    <p style="background-color: #white; ">{{ rendered_value }}</p>
+    <p style="background-color: white; ">{{ rendered_value }}</p>
     {% endif %};;
   }
 
@@ -60,13 +57,10 @@ view: fulfillment_investigation {
     sql: ${TABLE}.description ;;
 
     html:
-    {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: FAEBD7; ">{{ rendered_value }}</p>
-    {% else %}
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    {% if client._rendered_value == 'Client D' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
-    <p style="background-color: #white; ">{{ rendered_value }}</p>
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
     {% endif %};;
   }
 
