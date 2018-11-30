@@ -115,7 +115,7 @@ view: fulfillment_investigation {
     type: string
     sql: ${TABLE}.priority ;;
     html:
-    {% if client._rendered_value == 'Client D' %}
+    {% if value == '4' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
     <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
