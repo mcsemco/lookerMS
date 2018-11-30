@@ -121,7 +121,10 @@ view: fulfillment_investigation {
 
   dimension: client_test1 {
     type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client A' || ${TABLE}.client = 'Client D' THEN ${TABLE}.client END ;;
+    sql: CASE WHEN ${TABLE}.client = 'Client A' OR
+    ${TABLE}.client = 'Client B' OR
+    ${TABLE}.client = 'Client C' OR
+    ${TABLE}.client = 'Client D' THEN ${TABLE}.client END ;;
 
     html:
     <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
@@ -129,7 +132,9 @@ view: fulfillment_investigation {
 
   dimension: client_test2 {
     type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client E' THEN ${TABLE}.client END ;;
+    sql: CASE WHEN ${TABLE}.client = 'Client E'
+    ${TABLE}.client = 'Client F'
+    ${TABLE}.client = 'Client G'  THEN ${TABLE}.client END ;;
 
     html:
     <p style="background-color: green; ">{{ rendered_value }}</p>;;
@@ -137,7 +142,8 @@ view: fulfillment_investigation {
 
   dimension: client_test3 {
     type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client F' THEN ${TABLE}.client END ;;
+    sql: CASE WHEN ${TABLE}.client = 'Client H' OR
+    ${TABLE}.client = 'Client I' THEN ${TABLE}.client END ;;
 
     html:
     <p style="background-color: red; ">{{ rendered_value }}</p>;;
@@ -145,7 +151,10 @@ view: fulfillment_investigation {
 
   dimension: description_test1 {
     type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client D' THEN ${TABLE}.description END ;;
+    sql: CASE WHEN ${TABLE}.client = 'Client A' OR
+    ${TABLE}.client = 'Client B' OR
+    ${TABLE}.client = 'Client C' OR
+    ${TABLE}.client = 'Client D' THEN ${TABLE}.description END ;;
 
     html:
     <p style="background-color: yellow; ">{{ rendered_value }}</p>;;
@@ -153,7 +162,9 @@ view: fulfillment_investigation {
 
   dimension: description_test2 {
     type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client E' THEN ${TABLE}.description END ;;
+    sql: CASE WHEN ${TABLE}.client = 'Client E'
+    ${TABLE}.client = 'Client F'
+    ${TABLE}.client = 'Client G'  THEN ${TABLE}.description END ;;
 
     html:
     <p style="background-color: green; ">{{ rendered_value }}</p>;;
@@ -161,7 +172,8 @@ view: fulfillment_investigation {
 
   dimension: description_test3 {
     type: string
-    sql: CASE WHEN ${TABLE}.client = 'Client F' THEN ${TABLE}.description END ;;
+    sql: CASE WHEN ${TABLE}.client = 'Client H' OR
+    ${TABLE}.client = 'Client I' THEN ${TABLE}.description END ;;
 
     html:
     <p style="background-color: red; ">{{ rendered_value }}</p>;;
