@@ -7,7 +7,7 @@ view: fulfillment_investigation {
     sql:  CASE WHEN LEFT(${TABLE}.mkts_under, 1) = '0' THEN 'Pink'
                WHEN LEFT(${TABLE}.venues_under, 1) != '0' THEN 'Yellow' -- AND ${TABLE}.fulfillment_month > 100
             -- WHEN ${TABLE}.client = ' ' THEN 'Red'
-    ELSE 'White' END ;;
+          ELSE 'White' END ;;
   }
 
   dimension: contract {
@@ -27,20 +27,6 @@ view: fulfillment_investigation {
   dimension: client {
     type: string
     sql: ${TABLE}.client ;;
-
-    html:
-    {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
-  }
-
-  dimension: other_markets {
-    type: string
-    sql: ${TABLE}.other_markets ;;
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
@@ -136,10 +122,6 @@ view: fulfillment_investigation {
     {% endif %};;
   }
 
-  dimension: priority1 {
-    sql: ${TABLE}.priority ;;
-  }
-
   dimension: priority {
     type: string
     sql: ${TABLE}.priority ;;
@@ -181,19 +163,7 @@ view: fulfillment_investigation {
     <p style="background-color: white; ">{{ rendered_value }}</p>
     {% endif %};;
   }
-  dimension: market2 {
-    type: string
-    sql: ${TABLE}.market2 ;;
 
-    html:
-    {% if color_formatting._rendered_value == 'Pink' %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
-    {% elsif color_formatting._rendered_value == 'Yellow' %}
-    <p style="background-color: yellow; ">{{ rendered_value }}</p>
-    {% else %}
-    <p style="background-color: white; ">{{ rendered_value }}</p>
-    {% endif %};;
-  }
   dimension: network1 {
     type: string
     sql: ${TABLE}.network1 ;;
@@ -236,9 +206,37 @@ view: fulfillment_investigation {
     {% endif %};;
   }
 
+  dimension: other_markets {
+    type: string
+    sql: ${TABLE}.other_markets ;;
+
+    html:
+    {% if color_formatting._rendered_value == 'Pink' %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: white; ">{{ rendered_value }}</p>
+    {% endif %};;
+  }
+
   dimension: fulfillment_contract {
     type: string
     sql: ${TABLE}.fulfillment_contract ;;
+
+    html:
+    {% if color_formatting._rendered_value == 'Pink' %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% elsif color_formatting._rendered_value == 'Yellow' %}
+    <p style="background-color: yellow; ">{{ rendered_value }}</p>
+    {% else %}
+    <p style="background-color: white; ">{{ rendered_value }}</p>
+    {% endif %};;
+  }
+
+  dimension: market2 {
+    type: string
+    sql: ${TABLE}.market2 ;;
 
     html:
     {% if color_formatting._rendered_value == 'Pink' %}
@@ -255,10 +253,12 @@ view: fulfillment_investigation {
     sql: ${TABLE}.network4 ;;
 
     html:
-    {% if client._rendered_value == 'Client D' %}
+    {% if color_formatting._rendered_value == 'Pink' %}
+    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    {% elsif color_formatting._rendered_value == 'Yellow' %}
     <p style="background-color: yellow; ">{{ rendered_value }}</p>
     {% else %}
-    <p style="background-color: #FAEBD7; ">{{ rendered_value }}</p>
+    <p style="background-color: white; ">{{ rendered_value }}</p>
     {% endif %};;
   }
 
@@ -297,7 +297,7 @@ view: fulfillment_investigation {
 
   set: detail {
     fields: [ contract, client, description, cor_imp, mkts_under, venues_under, cor_start_date, cor_end_date, priority, fulfillment_month, market1,network1, network2, network3,
-      fulfillment_contract,network4,network5,network6 ]
+      other_markets, fulfillment_contract,network4,network5,network6 ]
   }
 
 #  measure: count {
