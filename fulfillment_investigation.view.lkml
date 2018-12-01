@@ -8,8 +8,8 @@ view: fulfillment_investigation {
                 ,venues_under
                 ,cor_start_date
                 ,cor_end_date
-                ,NTILE(5) OVER (ORDER BY cor_start_date ASC) AS cor_start_date_part
-                ,NTILE(5) OVER (ORDER BY cor_end_date ASC) AS cor_end_date_part
+                ,NTILE(5) OVER (ORDER BY cor_start_date ASC) AS cor_start_date_id
+                ,NTILE(5) OVER (ORDER BY cor_end_date ASC) AS cor_end_date_id
                 ,priority
                 ,fulfillment_month
                 ,market1
@@ -120,12 +120,12 @@ view: fulfillment_investigation {
       {% endif %} ;;
   }
 
-  dimension: cor_start_date_part {
+  dimension: cor_start_date_id {
     type: number
     sql: ${TABLE}.cor_start_date_part ;;
   }
 
-  dimension: cor_end_date_part {
+  dimension: cor_end_date_id {
     type: number
     sql: ${TABLE}.cor_end_date_part ;;
   }
@@ -135,13 +135,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.cor_start_date ;;
 
     html:
-      {% if cor_start_date_part._rendered_value == '1' %}
+      {% if cor_start_date_id._rendered_value == '1' %}
         <p style="background-color: lime; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
-      {% elsif cor_start_date_part._rendered_value == '2' %}
+      {% elsif cor_start_date_id._rendered_value == '2' %}
         <p style="background-color: palegreen; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
-      {% elsif cor_start_date_part._rendered_value == '3' %}
+      {% elsif cor_start_date_id._rendered_value == '3' %}
         <p style="background-color: white; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
-      {% elsif cor_start_date_part._rendered_value == '4' %}
+      {% elsif cor_start_date_id._rendered_value == '4' %}
         <p style="background-color: pink; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
       {% else %}
         <p style="background-color: lightcoral; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
@@ -153,13 +153,13 @@ view: fulfillment_investigation {
     sql: ${TABLE}.cor_end_date ;;
 
     html:
-      {% if cor_end_date_part._rendered_value == '1' %}
+      {% if cor_end_date_id._rendered_value == '1' %}
         <p style="background-color: lime; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
-      {% elsif cor_end_date_part._rendered_value == '2' %}
+      {% elsif cor_end_date_id._rendered_value == '2' %}
         <p style="background-color: palegreen; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
-      {% elsif cor_start_date_part._rendered_value == '3' %}
+      {% elsif cor_start_date_id._rendered_value == '3' %}
         <p style="background-color: white; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
-      {% elsif cor_start_date_part._rendered_value == '4' %}
+      {% elsif cor_start_date_id._rendered_value == '4' %}
         <p style="background-color: pink; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
       {% else %}
         <p style="background-color: lightcoral; ">{{ rendered_value | date: "%m/%d/%Y" }}</p>
