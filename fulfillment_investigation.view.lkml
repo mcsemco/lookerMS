@@ -27,6 +27,7 @@ view: fulfillment_investigation {
 
   dimension: color_formatting {
     type: string
+    label : " "
     sql:  CASE WHEN LEFT(${TABLE}.mkts_under, 1) = '0' OR LEFT(${TABLE}.venues_under, 1) = '0' THEN 'PINK'
                WHEN LEFT(${TABLE}.venues_under, 1) != '0' AND ${TABLE}.fulfillment_month >= 100 THEN 'YELLOW'
             -- WHEN ${TABLE}.client = '' THEN 'Red'
@@ -337,6 +338,7 @@ view: fulfillment_investigation {
 
   measure: count {
     type: count
+    label : " "
     drill_fields: [detail*]
   }
 
