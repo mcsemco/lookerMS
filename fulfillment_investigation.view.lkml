@@ -122,12 +122,12 @@ view: fulfillment_investigation {
 
   dimension: cor_start_date_id {
     type: number
-    sql: ${TABLE}.cor_start_date_part ;;
+    sql: ${TABLE}.cor_start_date_id ;;
   }
 
   dimension: cor_end_date_id {
     type: number
-    sql: ${TABLE}.cor_end_date_part ;;
+    sql: ${TABLE}.cor_end_date_id ;;
   }
 
   dimension: cor_start_date {
