@@ -30,7 +30,7 @@ view: fulfillment_investigation {
     label : " "
     sql:  CASE WHEN LEFT(${TABLE}.mkts_under, 1) = '0' OR LEFT(${TABLE}.venues_under, 1) = '0' THEN 'PINK'
                WHEN LEFT(${TABLE}.venues_under, 1) != '0' AND ${TABLE}.fulfillment_month >= 100 THEN 'YELLOW'
-            -- WHEN ${TABLE}.client = '' THEN 'Red'
+            -- Condition for RED color will be added
                ELSE 'WHITE'
           END ;;
   }
