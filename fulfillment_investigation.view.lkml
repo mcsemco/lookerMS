@@ -343,7 +343,7 @@ view: fulfillment_investigation {
   }
 
   set: detail {
-    fields: [contract, client, description, cor_imp, mkts_under, venues_under, cor_start_date, cor_end_date, priority, fulfillment_month, market1,network1, network2, network3,
-      other_markets, fulfillment_contract,network4,network5,network6 ]
+    fields: [ contract, client, description, cor_imp, mkts_under, venues_under, cor_start_date, cor_end_date, priority,
+      fulfillment_month, market1,network1, network2, network3, other_markets, fulfillment_contract,network4,network5,network6 ]
   }
 }
