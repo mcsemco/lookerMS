@@ -1,5 +1,6 @@
 view: ctr_by_day_of_week {
-  sql_table_name:
+  derived_table: {
+                sql:
                 SELECT day_of_week, ctr FROM looker.ctr_by_day_of_week
                 ORDER BY CASE
                   WHEN day_of_week = 'MON' then 1
@@ -10,6 +11,7 @@ view: ctr_by_day_of_week {
                   WHEN ThingCategory = 'SAT' then 6
                   ELSE 7
                 END ;;
+                }
 
   dimension: day_of_week {
     description: "Day of week"
