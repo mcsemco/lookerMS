@@ -11,14 +11,8 @@ view: rp1_sq_footage_forecast {
    dimension: month {
     description: "Month"
     type: string
-    sql: CASE WHEN ${TABLE}.month > 21 THEN ${TABLE}.month END ;;
+    sql: ${TABLE}.month ;;
    }
-
-  dimension: month_screen {
-    description: "Month"
-    type: string
-    sql: CASE WHEN ${TABLE}.month <= 21 THEN ${TABLE}.month END ;;
-  }
 
   measure: ahead_of_plan {
     description: "Ahead of plan"
