@@ -9,21 +9,21 @@ view: ad_size_and_device_ctr_performance {
 
   measure: desktop {
     description: "Desktop"
-    value_format: "0\%"
+    value_format: "0.00\%"
     type: sum
     sql: ${TABLE}.desktop ;;
   }
 
   measure: phone {
     description: "Phone"
-    value_format: "0\%"
+    value_format: "0.00\%"
     type: sum
     sql: ${TABLE}.phone ;;
   }
 
   measure: tablet {
     description: "Tablet"
-    value_format: "0\%"
+    value_format: "0.00\%"
     type: sum
     sql: ${TABLE}.tablet ;;
   }
