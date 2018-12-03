@@ -11,7 +11,7 @@ view: rp1_sq_footage_forecast {
    dimension: month {
     description: "Month"
     type: string
-    sql: ${TABLE}.month ;;
+    sql: CASE WHEN ${TABLE}.month > 21 THEN ${TABLE}.month END ;;
    }
 
   dimension: month_screen {
@@ -23,7 +23,7 @@ view: rp1_sq_footage_forecast {
   measure: ahead_of_plan {
     description: "Ahead of plan"
     type: sum
-    sql: ${TABLE}.ahead_of_plan ;;
+    sql: CASE WHEN ${TABLE}.ahead_of_plan > 21 THEN ${TABLE}.ahead_of_plan END ;;
   }
 
   measure: ahead_of_plan_screen {
@@ -35,7 +35,7 @@ view: rp1_sq_footage_forecast {
   measure: on_schedule {
     description: "On schedule"
     type: sum
-    sql: ${TABLE}.on_schedule ;;
+    sql: CASE WHEN ${TABLE}.on_schedule > 21 THEN ${TABLE}.on_schedule END ;;
   }
 
   measure: on_schedule_screen {
@@ -47,7 +47,7 @@ view: rp1_sq_footage_forecast {
   measure: at_risk {
     description: "At risk"
     type: sum
-    sql: ${TABLE}.at_risk ;;
+    sql: CASE WHEN ${TABLE}.at_risk > 21 THEN ${TABLE}.at_risk END ;;
   }
 
   measure: at_risk_screen {
@@ -59,7 +59,7 @@ view: rp1_sq_footage_forecast {
   measure: delayed_on_hold {
     description: "Delayed/On hold"
     type: sum
-    sql: ${TABLE}.delayed_on_hold ;;
+    sql: CASE WHEN ${TABLE}.delayed_on_hold > 21 THEN ${TABLE}.delayed_on_hold END ;;
   }
 
   measure: delayed_on_hold_screen {
