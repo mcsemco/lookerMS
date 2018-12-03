@@ -1,9 +1,16 @@
 view: ad_size_and_device_ctr_performance {
   sql_table_name: looker.ad_size_and_device_ctr_performance ;;
 
-  dimension: desktop {
+  dimension: screen {
+    description: "Screen"
+    type: string
+    sql: ${TABLE}.screen ;;
+  }
+
+  measure: desktop {
     description: "Desktop"
-    type: number
+    value_format: "0\%"
+    type: sum
     sql: ${TABLE}.desktop ;;
   }
 
@@ -19,13 +26,6 @@ view: ad_size_and_device_ctr_performance {
     value_format: "0\%"
     type: sum
     sql: ${TABLE}.tablet ;;
-  }
-
-  measure: screen {
-    description: "Screen"
-    value_format: "0\%"
-    type: sum
-    sql: ${TABLE}.screen ;;
   }
 
 }
