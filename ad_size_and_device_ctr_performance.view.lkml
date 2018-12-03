@@ -7,21 +7,24 @@ view: ad_size_and_device_ctr_performance {
     sql: ${TABLE}.desktop ;;
   }
 
-  dimension: phone {
+  measure: phone {
     description: "Phone"
-    type: number
+    value_format: "0\%"
+    type: sum
     sql: ${TABLE}.phone ;;
   }
 
-  dimension: tablet {
+  measure: tablet {
     description: "Tablet"
-    type: number
+    value_format: "0\%"
+    type: sum
     sql: ${TABLE}.tablet ;;
   }
 
-  dimension: screen {
+  measure: screen {
     description: "Screen"
-    type: string
+    value_format: "0\%"
+    type: sum
     sql: ${TABLE}.screen ;;
   }
 
