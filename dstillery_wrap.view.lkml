@@ -1,5 +1,5 @@
 view: dstillery_wrap {
- sql_table_name: SELECT * FROM looker.dstillery_wrap GROUP BY device_class ;;
+ derived_table: { sql: SELECT * FROM looker.dstillery_wrap GROUP BY device_class ;; }
 
   dimension: hit_date  {
     description: "Hit Date"
