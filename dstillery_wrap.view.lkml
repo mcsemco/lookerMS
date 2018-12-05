@@ -1,5 +1,5 @@
 view: dstillery {
- sql_table_name: looker.looker.dstillery_wrap ;;
+ sql_table_name: looker.dstillery_wrap ;;
 
   dimension: hit_date  {
     description: "Hit Date"
