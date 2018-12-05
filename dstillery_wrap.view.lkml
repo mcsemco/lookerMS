@@ -16,7 +16,7 @@ view: dstillery_wrap {
               ,clicks
               ,advertiser_cost
         FROM looker.dstillery_wrap
-              } ;;
+               ;;
               }
 
   dimension: hit_date  {
