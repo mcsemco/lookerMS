@@ -84,7 +84,7 @@ view: dstillery_wrap {
   dimension: impressions {
     description: "Impressions"
     type: number
-    sql: ${TABLE}.impressions;
+    sql: ${TABLE}.impressions ;;
 
   }
 
