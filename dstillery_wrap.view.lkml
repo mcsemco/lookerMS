@@ -84,7 +84,7 @@ view: dstillery_wrap {
   dimension: impressions {
     description: "Impressions"
     type: number
-    sql: (SELECT impressions FROM looker.dstillery_wrap WHERE device_class = p_device_class._parameter_value) ;;
+    sql: ${TABLE}.impressions;
 
   }
 
