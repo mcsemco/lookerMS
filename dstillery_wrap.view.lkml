@@ -1,4 +1,4 @@
-view: dstillery {
+view: dstillery_wrap {
  sql_table_name: looker.dstillery_wrap ;;
 
   dimension: hit_date  {
