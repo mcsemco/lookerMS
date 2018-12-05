@@ -90,4 +90,10 @@ view: dstillery_wrap {
     type: number
     sql: ${TABLE}.advertiser_cost ;;
   }
+
+  measure: ctr {
+    description: "CTR"
+    type: sum
+    sql: ${TABLE}.clicks / ${TABLE}.impressions ;;
+  }
 }
