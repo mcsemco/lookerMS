@@ -126,6 +126,7 @@ view: dstillery_wrap {
   measure: ctr {
     description: "CTR"
     type: sum
+    value_format: "0\%"
     sql: CASE WHEN ${TABLE}.clicks >= 0 AND ${TABLE}.impressions = 0 THEN NULL
               ELSE (${TABLE}.clicks / ${TABLE}.impressions) * 100
               END ;;
