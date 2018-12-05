@@ -91,7 +91,11 @@ view: dstillery_wrap {
     sql: ${TABLE}.advertiser_cost ;;
   }
 
-
+  dimension: bad_impressions {
+    description: "Impressions"
+    type: number
+    sql: ${TABLE}.impressions = 0 ;;
+  }
 
   measure: ctr {
     description: "CTR"
