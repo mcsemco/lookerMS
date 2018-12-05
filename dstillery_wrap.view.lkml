@@ -94,6 +94,8 @@ view: dstillery_wrap {
   measure: ctr {
     description: "CTR"
     type: sum
-    sql: ${TABLE}.clicks / ${TABLE}.impressions ;;
+    sql: CASE WHEN ${TABLE}.impressions = 0 THEN NULL
+              ELSE ${TABLE}.clicks / ${TABLE}.impressions
+              END;;
   }
 }
