@@ -95,7 +95,7 @@ view: dstillery_wrap {
     description: "CTR"
     type: sum
     sql: CASE WHEN ${TABLE}.impressions = 0 THEN NULL
-              ELSE SUM(${TABLE}.clicks) / SUM(${TABLE}.impressions)) * 100
+              ELSE SUM(${TABLE}.clicks) / SUM(${TABLE}.impressions) * 100
               END;;
   }
 }
