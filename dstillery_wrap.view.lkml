@@ -73,10 +73,19 @@ view: dstillery_wrap {
     sql: ${TABLE}.device_os ;;
   }
 
+  parameter: p_impressions {
+    allowed_value: { label: "Desktop" value: "Desktop" }
+    allowed_value: { label: "Smartphone" value: "Smartphone" }
+    allowed_value: { label: "Tablet" value: "Tablet" }
+    allowed_value: { label: "Music Player" value: "Music Player" }
+    allowed_value: { label: "Unknown" value: "Unknown" }
+  }
+
   dimension: impressions {
     description: "Impressions"
     type: number
-    sql: ${TABLE}.impressions ;;
+    sql: (SELECT impressions FROM looker.dstillery_wrap WHERE device_class = p_device_class._parameter_value) ;;
+
   }
 
   dimension: clicks {
