@@ -102,6 +102,7 @@ view: dstillery_wrap {
     type: sum
     sql: CASE WHEN ${TABLE}.impressions = 0 THEN NULL
               ELSE (${TABLE}.clicks / ${TABLE}.impressions) * 100
-              END;;
+              END
+         WHERE ${TABLE}.device_class = "Desktop";;
   }
 }
