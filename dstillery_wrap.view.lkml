@@ -94,7 +94,7 @@ view: dstillery_wrap {
   dimension: bad_impressions {
     description: "Bad Impressions"
     type: number
-    sql: COUNT(${TABLE}.impressions) ;;
+    sql: COUNT(${TABLE}.impressions = 0) ;;
   }
 
   measure: ctr {
