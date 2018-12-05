@@ -1,5 +1,23 @@
 view: dstillery_wrap {
- sql_table_name: looker.dstillery_wrap ;;
+ derived_table: {
+  sql: SELECT hit_date
+              ,advertiser_id
+              ,advertiser_name
+              ,campaign_id
+              ,campaign_name
+              ,target_group_id
+              ,creative_id
+              ,creative_name
+              ,pub_adsize
+              ,device_class
+              ,device_make
+              ,device_os
+              ,impressions
+              ,clicks
+              ,advertiser_cost
+        FROM looker.dstillery_wrap
+              } ;;
+              }
 
   dimension: hit_date  {
     description: "Hit Date"
@@ -85,7 +103,6 @@ view: dstillery_wrap {
     description: "Impressions"
     type: number
     sql: ${TABLE}.impressions ;;
-
   }
 
   dimension: clicks {
