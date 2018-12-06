@@ -15,7 +15,8 @@ view: dstillery_wrap {
               ,impressions
               ,clicks
               ,advertiser_cost
-        FROM looker.dstillery_wrap ;;
+        FROM looker.dstillery_wrap
+        WHERE device_os != 'NULL' ;;
               }
 
   dimension: hit_date  {
@@ -130,13 +131,14 @@ view: dstillery_wrap {
   measure: ctr {
     description: "CTR"
     type: sum
-    value_format: "0\%"
+    value_format: "0.00\%"
     sql: CASE WHEN ${TABLE}.clicks >= 0 AND ${TABLE}.impressions = 0 THEN NULL
               ELSE (${TABLE}.clicks / ${TABLE}.impressions)
               END ;;
+    drill_fields: [detail*]
   }
 
   set: detail {
-    fields: [ device_class ]
+    fields: [ device_class, ctr]
   }
 }
