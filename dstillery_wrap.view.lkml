@@ -126,13 +126,15 @@ view: dstillery_wrap {
   dimension: day_of_week_test  {
     description: "Day Of Week"
     type: string
+    order_by_field: day_of_week_test
     sql: CASE WHEN hit_date = '20181126' THEN 'MON'
               WHEN hit_date = '20181127' THEN 'TUE'
               WHEN hit_date = '20181128' THEN 'WED'
               WHEN hit_date = '20181129' THEN 'THU'
               WHEN hit_date = '20181130' THEN 'FRI'
-              WHEN hit_date = '20181131' THEN 'SAT'
-              ELSE 'SUN';;
+              WHEN hit_date = '20181201' THEN 'SAT'
+              ELSE 'SUN'
+        END ;;
   }
 
   measure: ctr {
