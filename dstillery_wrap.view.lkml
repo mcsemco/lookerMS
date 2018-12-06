@@ -1,6 +1,6 @@
 view: dstillery_wrap {
  derived_table: {
-  sql: SELECT hit_date
+  sql: SELECT  hit_date
               ,advertiser_id
               ,advertiser_name
               ,campaign_id
@@ -128,7 +128,7 @@ view: dstillery_wrap {
     type: sum
     value_format: "0\%"
     sql: CASE WHEN ${TABLE}.clicks >= 0 AND ${TABLE}.impressions = 0 THEN NULL
-              ELSE (${TABLE}.clicks / ${TABLE}.impressions) * 100
+              ELSE (${TABLE}.clicks / ${TABLE}.impressions)
               END ;;
   }
 }
