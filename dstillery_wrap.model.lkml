@@ -1,4 +1,4 @@
-connection: "fulfillment_inv"
+connection: "postgres_test"
 
 include: "*.view.lkml"
 
