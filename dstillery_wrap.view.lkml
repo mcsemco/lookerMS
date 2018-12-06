@@ -126,7 +126,7 @@ view: dstillery_wrap {
   dimension: day_of_week_test  {
     description: "Day Of Week"
     type: string
-    order_by_field: day_of_week_test
+
     sql: CASE WHEN hit_date = '20181126' THEN 'MON'
               WHEN hit_date = '20181127' THEN 'TUE'
               WHEN hit_date = '20181128' THEN 'WED'
