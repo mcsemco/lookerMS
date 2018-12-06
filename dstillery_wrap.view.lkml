@@ -90,7 +90,6 @@ view: dstillery_wrap {
     sql: UPPER(${TABLE}.device_os) ;;
   }
 
-
   dimension: advertiser_cost {
     description: "Advertiser Cost"
     type: number
@@ -135,8 +134,9 @@ view: dstillery_wrap {
     sql: CASE WHEN ${TABLE}.clicks >= 0 AND ${TABLE}.impressions = 0 THEN NULL
               ELSE (${TABLE}.clicks / ${TABLE}.impressions)
               END ;;
+  }
 
-
-
+  set: detail {
+    fields: [ device_class ]
   }
 }
