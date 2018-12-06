@@ -90,17 +90,6 @@ view: dstillery_wrap {
     sql: UPPER(${TABLE}.device_os) ;;
   }
 
-  dimension: impressions {
-    description: "Impressions"
-    type: number
-    sql: ${TABLE}.impressions ;;
-  }
-
-  dimension: clicks {
-    description: "Clicks"
-    type: number
-    sql: ${TABLE}.clicks ;;
-  }
 
   dimension: advertiser_cost {
     description: "Advertiser Cost"
@@ -125,6 +114,18 @@ view: dstillery_wrap {
     type: time
     timeframes: [day_of_week]
     sql: ${date} ;;
+  }
+
+  measure: impressions {
+    description: "Impressions"
+    type: sum
+    sql: ${TABLE}.impressions ;;
+  }
+
+  measure: clicks {
+    description: "Clicks"
+    type: sum
+    sql: ${TABLE}.clicks ;;
   }
 
   measure: ctr {
