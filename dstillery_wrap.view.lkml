@@ -15,8 +15,7 @@ view: dstillery_wrap {
               ,impressions
               ,clicks
               ,advertiser_cost
-        FROM looker.dstillery_wrap
-        ORDER BY hit_date ;;
+        FROM looker.dstillery_wrap ;;
               }
 
   dimension: hit_date  {
@@ -76,7 +75,7 @@ view: dstillery_wrap {
   dimension: device_class {
     description: "Device Class"
     type: string
-    sql: ${TABLE}.device_class ;;
+    sql: UPPER(${TABLE}.device_class) ;;
   }
 
   dimension: device_make {
@@ -88,15 +87,7 @@ view: dstillery_wrap {
   dimension: device_os {
     description: "Device OS"
     type: string
-    sql: ${TABLE}.device_os ;;
-  }
-
-  parameter: p_impressions {
-    allowed_value: { label: "Desktop" value: "Desktop" }
-    allowed_value: { label: "Smartphone" value: "Smartphone" }
-    allowed_value: { label: "Tablet" value: "Tablet" }
-    allowed_value: { label: "Music Player" value: "Music Player" }
-    allowed_value: { label: "Unknown" value: "Unknown" }
+    sql: UPPER(${TABLE}.device_os) ;;
   }
 
   dimension: impressions {
@@ -123,18 +114,17 @@ view: dstillery_wrap {
     sql: ${TABLE}.impressions = 0 ;;
   }
 
-  dimension: day_of_week  {
+  dimension: date  {
     description: "Day Of Week"
-    type: string
+    type: date
+    sql: CONCAT(SUBSTRING(hit_date, 0 , 5), '-', SUBSTRING(hit_date, 5 , 2), '-', SUBSTRING(hit_date, 7 , 2))  ;;
+  }
 
-    sql: CASE WHEN hit_date = '20181126' THEN 'MON'
-              WHEN hit_date = '20181127' THEN 'TUE'
-              WHEN hit_date = '20181128' THEN 'WED'
-              WHEN hit_date = '20181129' THEN 'THU'
-              WHEN hit_date = '20181130' THEN 'FRI'
-              WHEN hit_date = '20181201' THEN 'SAT'
-              ELSE 'SUN'
-        END ;;
+  dimension_group: day_of_week {
+    label: "Day Of Week"
+    type: time
+    timeframes: [day_of_week]
+    sql: ${date} ;;
   }
 
   measure: ctr {
@@ -144,6 +134,7 @@ view: dstillery_wrap {
     sql: CASE WHEN ${TABLE}.clicks >= 0 AND ${TABLE}.impressions = 0 THEN NULL
               ELSE (${TABLE}.clicks / ${TABLE}.impressions)
               END ;;
+
 
 
   }
