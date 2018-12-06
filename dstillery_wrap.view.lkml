@@ -15,8 +15,7 @@ view: dstillery_wrap {
               ,impressions
               ,clicks
               ,advertiser_cost
-        FROM looker.dstillery_wrap
-               ;;
+        FROM looker.dstillery_wrap ;;
               }
 
   dimension: hit_date  {
@@ -131,8 +130,8 @@ view: dstillery_wrap {
               WHEN hit_date = '20181127' THEN 'TUE'
               WHEN hit_date = '20181128' THEN 'WED'
               WHEN hit_date = '20181129' THEN 'THU'
-              WHEN hit_date = '20181130' THEN 'FRI'
-              WHEN hit_date = '20181201' THEN 'SAT'
+              WHEN hit_date = '20181201' THEN 'FRI'
+              WHEN hit_date = '20181202' THEN 'SAT'
               ELSE 'SUN'
         END ;;
   }
@@ -144,5 +143,7 @@ view: dstillery_wrap {
     sql: CASE WHEN ${TABLE}.clicks >= 0 AND ${TABLE}.impressions = 0 THEN NULL
               ELSE (${TABLE}.clicks / ${TABLE}.impressions)
               END ;;
+
+
   }
 }
