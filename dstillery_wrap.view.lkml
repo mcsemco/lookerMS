@@ -138,6 +138,56 @@ view: dstillery_wrap {
     drill_fields: [detail*]
   }
 
+  measure: ctr_desktop {
+    description: "Desktop"
+    type: sum
+    value_format: "0.00\%"
+    sql: CASE WHEN ${TABLE}.clicks >= 0 AND ${TABLE}.impressions = 0 THEN NULL
+              WHEN ${device_class} = 'DESKTOP' THEN (${TABLE}.clicks / ${TABLE}.impressions)
+              END ;;
+    drill_fields: [detail*]
+  }
+
+  measure: ctr_smartphone {
+    description: "Smartphone"
+    type: sum
+    value_format: "0.00\%"
+    sql: CASE WHEN ${TABLE}.clicks >= 0 AND ${TABLE}.impressions = 0 THEN NULL
+              WHEN ${device_class} = 'SMARTPHONE' THEN (${TABLE}.clicks / ${TABLE}.impressions)
+              END ;;
+    drill_fields: [detail*]
+  }
+
+  measure: ctr_tablet {
+    description: "Tablet"
+    type: sum
+    value_format: "0.00\%"
+    sql: CASE WHEN ${TABLE}.clicks >= 0 AND ${TABLE}.impressions = 0 THEN NULL
+              WHEN ${device_class} = 'TABLET' THEN (${TABLE}.clicks / ${TABLE}.impressions)
+              END ;;
+    drill_fields: [detail*]
+  }
+
+  measure: ctr_music_player {
+    description: "Music Player"
+    type: sum
+    value_format: "0.00\%"
+    sql: CASE WHEN ${TABLE}.clicks >= 0 AND ${TABLE}.impressions = 0 THEN NULL
+              WHEN ${device_class} = 'MUSIC PLAYER' THEN (${TABLE}.clicks / ${TABLE}.impressions)
+              END ;;
+    drill_fields: [detail*]
+  }
+
+  measure: ctr_unknown {
+    description: "Unknown"
+    type: sum
+    value_format: "0.00\%"
+    sql: CASE WHEN ${TABLE}.clicks >= 0 AND ${TABLE}.impressions = 0 THEN NULL
+              WHEN ${device_class} = 'UNKNOWN' THEN (${TABLE}.clicks / ${TABLE}.impressions)
+              END ;;
+    drill_fields: [detail*]
+  }
+
   measure: ctr_count {
     description: "CTR Count"
     type: count_distinct
