@@ -138,6 +138,11 @@ view: dstillery_wrap {
     drill_fields: [detail*]
   }
 
+  measure: ctr_count {
+    description: "CTR Count"
+    type: count_distinct
+    sql: ${TABLE}.clicks >= 0 AND ${TABLE}.impressions = 0 ;;
+  }
   set: detail {
     fields: [ device_class, ctr]
   }
