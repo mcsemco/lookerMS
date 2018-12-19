@@ -121,6 +121,7 @@ view: fulfillment_investigation {
   }
 
   dimension: cor_start_date_id {
+    value_format: "0"
     type: number
     sql: ${TABLE}.cor_start_date_id ;;
   }

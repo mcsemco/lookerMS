@@ -16,8 +16,9 @@ view: dstillery_wrap {
               ,clicks
               ,advertiser_cost
         FROM looker.dstillery_wrap
-        WHERE device_os != 'NULL' ;;
-              }
+      --  WHERE device_os != 'NULL'
+      ;;
+      }
 
   dimension: hit_date  {
     description: "Hit Date"
@@ -72,6 +73,27 @@ view: dstillery_wrap {
     type: string
     sql: ${TABLE}.pub_adsize ;;
   }
+
+  parameter: p_pub_adsize {
+    description: "Input parameter for Address Format"
+    label: "Address Format"
+    type: string
+
+    allowed_value: {
+      label: "USA"
+      value: "USA"
+    }
+    allowed_value: {
+      label: "Canada"
+      value: "Canada"
+    }
+  }
+
+  #dimension: pub_adsize {
+  #  description: "Pub Adsize"
+  #  type: number
+ #   sql: ${TABLE}.pub_adsize ;;
+ # }
 
   dimension: device_class {
     description: "Device Class"
@@ -138,7 +160,7 @@ view: dstillery_wrap {
     drill_fields: [detail*]
   }
 
-  measure: ctr_desktop {
+  measure: desktop {
     description: "Desktop"
     type: sum
     value_format: "0.00\%"
@@ -148,7 +170,7 @@ view: dstillery_wrap {
     drill_fields: [detail*]
   }
 
-  measure: ctr_smartphone {
+  measure: smartphone {
     description: "Smartphone"
     type: sum
     value_format: "0.00\%"
@@ -158,7 +180,7 @@ view: dstillery_wrap {
     drill_fields: [detail*]
   }
 
-  measure: ctr_tablet {
+  measure: tablet {
     description: "Tablet"
     type: sum
     value_format: "0.00\%"
@@ -168,7 +190,7 @@ view: dstillery_wrap {
     drill_fields: [detail*]
   }
 
-  measure: ctr_music_player {
+  measure: music_player {
     description: "Music Player"
     type: sum
     value_format: "0.00\%"
@@ -178,7 +200,7 @@ view: dstillery_wrap {
     drill_fields: [detail*]
   }
 
-  measure: ctr_unknown {
+  measure: unknown {
     description: "Unknown"
     type: sum
     value_format: "0.00\%"
